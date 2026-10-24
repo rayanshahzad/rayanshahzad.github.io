@@ -1,0 +1,1076 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Rayan Shahzad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@600&family=DM+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: one scrolling page. Cream paper, one navy ink, one grotesk throughout, second phrase of each heading in a softer tone. */
+:root{
+  --paper:#f7f2dd; --paper-warm:#f3e9a6; --card:#fffdf2;
+  --ink:#1b1d3a; --ink-soft:#5a5b70; --line:rgba(27,29,58,.14); --ghost:rgba(27,29,58,.055);
+  --f1:#1b1d3a; --f2:#45466a; --f3:#85829a; --f4:#cbc4b3; --f5:#e9e1c2;
+  --sans:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+  --cabin:"Cabin","Schibsted Grotesk",Arial,sans-serif;
+  --gutter:clamp(16px,4vw,56px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:var(--sans);font-size:16px;line-height:1.55;color:var(--ink);
+  background:var(--paper) linear-gradient(165deg,var(--paper) 0%,var(--paper-warm) 55%,var(--paper) 100%);}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:var(--gutter)}
+section{padding-block:clamp(64px,9vw,120px)}
+em{font-style:normal;color:var(--f3)}
+h1,h2{margin:0;font-weight:700;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
+h2{font-size:clamp(2.4rem,6vw,4.6rem)}
+.eyebrow{font-family:var(--cabin);font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 18px}
+.lede{max-width:56ch;color:var(--ink-soft);margin:20px 0 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;border:1px solid var(--line);
+  background:var(--card);font:600 .88rem var(--sans);color:var(--ink);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--ink);color:var(--card);border-color:var(--ink)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;padding-block:14px}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.mark{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.9rem;text-decoration:none}
+.mark span{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--card);font:500 .72rem var(--mono)}
+.pills{display:flex;gap:2px;padding:5px;border-radius:999px;background:rgba(255,253,242,.82);border:1px solid var(--line);backdrop-filter:blur(10px);overflow-x:auto;max-width:100%}
+.pills a{padding:7px 14px;border-radius:999px;font-size:.82rem;font-weight:500;text-decoration:none;white-space:nowrap;transition:background .25s,color .25s}
+.pills a.on{background:var(--ink);color:var(--card)}
+
+/* hero */
+.hero{position:relative;padding-block:8px clamp(40px,6vw,72px);overflow:hidden}
+.ghost{position:absolute;inset:0;display:grid;place-items:center;font-size:27vw;font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--ghost);user-select:none;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:24px}
+.hero h1{font-size:clamp(2.8rem,6.6vw,5.6rem)}
+.hero h1 i{font-style:normal;color:var(--f3)}
+.hero-sub{margin:18px 0 0;color:var(--ink-soft);max-width:36ch}
+.portrait{position:relative;justify-self:center}
+.portrait img{height:clamp(400px,46vw,650px);width:auto;position:relative}
+.portrait::before{content:"";position:absolute;left:50%;bottom:-8px;width:120%;height:34px;transform:translateX(-50%);
+  background:radial-gradient(closest-side,rgba(27,29,58,.22),transparent);}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.rise.d1{animation-delay:.12s}.rise.d2{animation-delay:.24s}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1.15fr) auto minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.about p{max-width:46ch}
+.about .more{color:var(--ink-soft);font-size:.95rem}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.badge{width:250px;justify-self:center;perspective:1200px;background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-align:left}
+.strap{width:16px;height:64px;margin:0 auto;background:var(--ink);border-radius:0 0 3px 3px;position:relative}
+.strap::after{content:"";position:absolute;left:50%;bottom:-14px;width:26px;height:18px;transform:translateX(-50%);border-radius:6px;background:var(--f4);border:1px solid var(--line)}
+.swing{transform-origin:50% 0;animation:swing 6s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+.card3d{position:relative;height:372px;margin-top:10px;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.badge:hover .card3d,.badge.flipped .card3d{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;background:var(--card);border:1px solid var(--line);box-shadow:0 24px 50px -24px rgba(27,29,58,.45);overflow:hidden}
+.face.back{transform:rotateY(180deg);padding:26px 22px}
+.id-top{background:var(--ink);color:var(--card);padding:12px 16px;font:500 .68rem var(--mono);letter-spacing:.16em;text-transform:uppercase;display:flex;justify-content:space-between}
+.id-photo{width:128px;height:150px;margin:18px auto 12px;border-radius:14px;overflow:hidden;background:var(--f5);border:1px solid var(--line)}
+.id-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.id-name{text-align:center;font-weight:700;letter-spacing:.04em;font-size:.95rem}
+.id-role{text-align:center;font-size:.74rem;color:var(--ink-soft)}
+.id-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:14px 16px 0;font-size:.72rem;font-weight:600}
+.id-fields small{display:block;font:400 .56rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.barcode{height:26px;margin:12px 16px 0;width:96px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 9px)}
+.back h3{margin:0 0 14px;font-size:1rem}
+.back ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.back li{font-size:.84rem;font-weight:600;line-height:1.25;padding-left:26px;position:relative}
+.back li::before{content:"✓";position:absolute;left:0;top:0;width:17px;height:17px;border-radius:50%;background:var(--ink);color:var(--card);font-size:.6rem;display:grid;place-items:center}
+.back li small{display:block;font-weight:400;font-size:.7rem;color:var(--ink-soft)}
+.sign{font-weight:700;font-size:1.3rem;letter-spacing:-.02em;margin-top:16px;color:var(--ink-soft)}
+.facts{margin:0}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+.facts dt{color:var(--ink-soft)}
+.facts dd{margin:0;font-weight:600;text-align:right}
+.quote{font-weight:600;font-size:1.25rem;letter-spacing:-.02em;line-height:1.25;margin:22px 0 0;color:var(--ink-soft)}
+
+/* skills */
+.fams{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 18px}
+.fam{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);font:500 .8rem var(--sans);color:var(--ink);cursor:pointer}
+.fam i{width:11px;height:11px;border-radius:3px;background:var(--c)}
+.fam[aria-pressed="true"]{background:var(--ink);color:var(--card)}
+.skills{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:32px;align-items:start}
+.table{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px}
+.tile{aspect-ratio:1;border-radius:14px;border:0;background:var(--c);color:var(--t);padding:9px 10px;text-align:left;font-family:var(--sans);
+  display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:transform .25s,opacity .3s,box-shadow .25s}
+.tile:hover,.tile:focus-visible{transform:translateY(-5px) scale(1.04);box-shadow:0 14px 24px -14px rgba(27,29,58,.6)}
+.tile.dim{opacity:.22}
+.tile small{font:400 .58rem var(--mono);opacity:.75}
+.tile b{font-size:1.45rem;letter-spacing:-.03em;line-height:1}
+.tile span{font-size:.6rem;line-height:1.15;opacity:.85}
+.detail{position:sticky;top:96px;padding:24px;border-radius:18px;background:var(--card);border:1px solid var(--line);min-height:210px}
+.detail b{display:block;font-size:3.4rem;letter-spacing:-.04em;line-height:1}
+.detail strong{display:block;margin-top:12px}
+.detail small{font-size:.8rem;font-family:var(--cabin);font-weight:600;letter-spacing:.01em;text-transform:none;color:var(--ink-soft)}
+.detail p{margin:10px 0 0;font-size:.88rem;color:var(--ink-soft)}
+
+/* work */
+.panels{display:flex;gap:12px;margin-top:40px;min-height:500px}
+.panel{flex:1 1 0;min-width:0;border-radius:22px;background:var(--card);border:1px solid var(--line);overflow:hidden;position:relative;cursor:pointer;transition:flex-grow .6s cubic-bezier(.2,.7,.2,1)}
+.panel.open{flex-grow:14;cursor:default}
+.spine{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.05rem;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;transition:opacity .3s}
+.panel.open .spine{opacity:0;pointer-events:none}
+.inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:28px;height:100%;padding:clamp(22px,3vw,40px);opacity:0;transition:opacity .35s;min-width:560px}
+.panel.open .inner{opacity:1;transition-delay:.25s}
+.inner h3{margin:0 0 12px;font-size:clamp(1.5rem,2.6vw,2.2rem);letter-spacing:-.03em;line-height:1.05}
+.inner p{margin:0;color:var(--ink-soft);font-size:.93rem;max-width:44ch}
+.inner ul{margin:16px 0 0;padding-left:18px;font-size:.86rem;display:grid;gap:5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.chips span{font-size:.72rem;padding:5px 10px;border-radius:999px;border:1px solid var(--line)}
+.inner .btn{margin-top:20px}
+.figure{align-self:stretch;border-radius:16px;background:var(--f5);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;min-height:200px}
+.figure b{font-size:clamp(2.6rem,5vw,4.4rem);letter-spacing:-.05em;line-height:.95}
+.figure span{font-size:.82rem;font-family:var(--cabin);font-weight:600;letter-spacing:.01em;text-transform:none;color:var(--ink-soft);margin-top:10px}
+.figure.photo{position:relative;padding:0;overflow:hidden}
+.figure.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.figure.photo.wide{align-self:center;aspect-ratio:857/708;min-height:0}
+.figure.photo.wide img{object-position:40% 60%}
+.inner:has(.wide){grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.figure.photo span{position:absolute;left:12px;bottom:12px;margin:0;padding:5px 10px;border-radius:999px;background:var(--card);color:var(--ink)}
+.figure.grid4{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0;background:none;align-self:center;min-height:0}
+.figure.grid4 img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:12px}
+.proof{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.proof span{font-size:.82rem;font-family:var(--cabin);font-weight:600;letter-spacing:.01em;text-transform:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+
+/* path */
+.path{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,5vw,72px);margin-top:44px;align-items:start}
+.steps{display:grid;gap:14px;border-right:1px solid var(--ink);padding-right:clamp(18px,3vw,40px)}
+.step{padding:22px 24px;border-radius:18px;background:rgba(255,253,242,.7);border:1px solid var(--line);transition:background .3s,transform .3s}
+.step.now{background:var(--card);transform:translateX(6px)}
+.step small{display:inline-block;font-size:.76rem;font-family:var(--cabin);font-weight:600;letter-spacing:.01em;text-transform:none;color:var(--ink);background:var(--f5);padding:3px 10px;border-radius:999px}
+.step h3{margin:10px 0 2px;font-size:1.2rem;letter-spacing:-.02em}
+.step p{margin:0;font-size:.88rem;color:var(--ink-soft)}
+.step .when{float:right;font-size:.8rem;font-family:var(--cabin);font-weight:600;letter-spacing:.01em;text-transform:none;color:var(--ink-soft)}
+.year{position:sticky;top:34vh;font-size:clamp(4rem,11vw,9.5rem);font-weight:800;letter-spacing:-.06em;line-height:1;font-variant-numeric:tabular-nums}
+
+/* honors */
+.honors{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:start}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 18px;border-bottom:1px solid var(--line);transition:background .25s,color .25s,padding .25s}
+.rows li:hover{background:var(--ink);color:var(--card);padding-left:26px}
+.rows strong{font-weight:600}
+.rows span{font-size:.8rem;font-family:var(--cabin);font-weight:600;letter-spacing:.01em;text-transform:none;opacity:.65;white-space:nowrap}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:40px}
+.num{padding:26px;border-radius:22px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;gap:18px;transition:transform .3s}
+.num:hover{transform:translateY(-6px)}
+.num b{font-size:clamp(2.8rem,5vw,4rem);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.num b i{font-style:normal;color:var(--f3)}
+.num strong{display:block}
+.num p{margin:4px 0 0;font-size:.86rem;color:var(--ink-soft)}
+
+/* contact */
+.contact{text-align:left}
+.contact h2{font-size:clamp(3rem,9vw,7.5rem)}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:34px}
+.mail code{font:500 clamp(1rem,2.4vw,1.4rem) var(--mono);user-select:all;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);padding-block:26px;font-size:.8rem;color:var(--ink-soft)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.foot-links{display:flex;flex-wrap:wrap;gap:18px}
+.foot-links a{text-decoration:none}
+.foot-links a:hover{color:var(--ink);text-decoration:underline}
+
+@media (max-width:900px){
+  .mark b{display:none}
+  .hero-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .portrait{order:-1}
+  .hero-sub{margin-inline:auto}
+  .hero-cta{justify-content:center}
+  .ghost{align-items:start;padding-top:70px;font-size:30vw}
+  .about,.honors,.skills{grid-template-columns:1fr}
+  .detail{position:static;min-height:0}
+  .panels{flex-direction:column;min-height:0}
+  .panel,.panel.open{flex:none;cursor:default}
+  .spine{display:none}
+  .inner{opacity:1;min-width:0;grid-template-columns:1fr}
+  .figure{min-height:0}
+  .figure.photo{min-height:260px}
+  .inner:has(.wide){grid-template-columns:1fr}
+  .figure.photo.wide{min-height:0}
+  .proof{justify-content:center}
+  .path{grid-template-columns:1fr}
+  .year{display:none}
+  .steps{border-right:0;padding-right:0}
+  .step .when{float:none;display:block;margin-top:6px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise,.swing{animation:none}
+  *{transition-duration:.01s!important}
+}
+
+.src{align-self:flex-start;margin-bottom:-6px;font-family:var(--cabin);font-weight:600;font-size:.74rem;letter-spacing:.01em;color:var(--on-dark-soft);border:1px solid var(--dark-line);padding:3px 10px;border-radius:999px}
+.step{position:relative;padding-left:90px}
+.org{position:absolute;left:24px;top:22px;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--ink);color:var(--card);font-family:var(--cabin);font-weight:600;font-size:.95rem;letter-spacing:.02em;box-shadow:0 8px 18px -10px rgba(27,29,58,.6);transition:transform .5s var(--ease)}
+.org.l3{font-size:.74rem}
+.step.now .org{transform:rotate(-6deg) scale(1.06)}
+@media (max-width:900px){.step{padding-left:76px}.org{left:16px;width:44px;height:44px}}
+/* ===== motion layer ===== */
+html,body{overflow-x:clip}
+:root{--on-dark:#fffdf2;--on-dark-soft:rgba(255,253,242,.64);--dark-line:rgba(255,253,242,.13);--dark-em:#a7a4c6;--ease:cubic-bezier(.2,.8,.2,1)}
+
+/* scroll progress, grain */
+
+/* nav */
+.nav{transition:transform .5s var(--ease)}
+.nav.hide{transform:translateY(-120%)}
+.pills{position:relative}
+.pill-ind{position:absolute;top:5px;bottom:5px;left:0;width:0;border-radius:999px;background:var(--ink);opacity:0;transition:left .55s var(--ease),width .55s var(--ease),opacity .3s;pointer-events:none}
+.pills a{position:relative;z-index:1}
+.pills.ind a.on{background:transparent;color:var(--card)}
+
+/* hero */
+#field{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;
+  -webkit-mask-image:radial-gradient(ellipse 70% 75% at 55% 45%,#000 35%,transparent 80%);mask-image:radial-gradient(ellipse 70% 75% at 55% 45%,#000 35%,transparent 80%)}
+.hud{position:absolute;right:var(--gutter);top:14px;display:flex;gap:14px;font:500 .66rem var(--mono);letter-spacing:.14em;color:var(--ink-soft);z-index:2}
+.hud b{font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+.hud::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink);align-self:center;animation:blink 1.6s steps(2) infinite}
+@keyframes blink{50%{opacity:.15}}
+.ghost{will-change:translate;display:flex;justify-content:center;align-items:center}
+.ghost span{display:inline-block;animation:ghostIn 1.4s var(--ease) both;animation-delay:calc(var(--i)*80ms + .1s)}
+@keyframes ghostIn{from{opacity:0;transform:translateY(35%) scaleY(1.3)}}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.hero h1 .ln>span{display:inline-block;animation:lineUp 1.1s var(--ease) both;animation-delay:calc(.2s + var(--i)*110ms)}
+@keyframes lineUp{from{transform:translateY(110%) rotate(4deg)}}
+.fx{animation:fadeUp .9s var(--ease) both;animation-delay:var(--d,0s)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}}
+.proof span{animation:pop .7s var(--ease) both;animation-delay:var(--d,0s)}
+@keyframes pop{from{opacity:0;transform:scale(.6) translateY(10px)}}
+.portrait{will-change:translate}
+.portrait img{animation:scanIn 1.6s cubic-bezier(.6,0,.2,1) .25s both}
+@keyframes scanIn{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 -2% 0)}}
+.scan{position:absolute;left:-14%;right:-14%;top:0;height:2px;background:var(--ink);box-shadow:0 0 18px 2px rgba(27,29,58,.35);opacity:0;animation:scanLine 1.6s cubic-bezier(.6,0,.2,1) .25s both;pointer-events:none}
+.scan::before,.scan::after{content:"";position:absolute;top:-4px;width:2px;height:10px;background:var(--ink)}
+.scan::before{left:0}.scan::after{right:0}
+@keyframes scanLine{0%{top:0;opacity:1}92%{opacity:1}100%{top:100%;opacity:0}}
+
+/* marquee */
+.marquee-wrap{overflow:hidden;padding-block:clamp(24px,4vw,48px);position:relative}
+.marquee{transform:rotate(-2.2deg);width:112%;margin-left:-6%;display:grid;gap:6px}
+.mq-row{overflow:hidden;transform:skewX(var(--sk,0deg));transition:transform .4s var(--ease)}
+.mq-track{display:flex;width:max-content;animation:mq 46s linear infinite}
+.mq-row.rev .mq-track{animation-direction:reverse;animation-duration:54s}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq-track span{display:inline-flex;align-items:center;gap:clamp(18px,2.4vw,36px);padding-right:clamp(18px,2.4vw,36px);
+  font-size:clamp(2.4rem,6.4vw,5.6rem);font-weight:800;letter-spacing:-.04em;line-height:1.05;white-space:nowrap}
+.mq-row.rev .mq-track span{color:transparent;-webkit-text-stroke:1.4px var(--ink)}
+.mq-track span::after{content:"";width:.28em;height:.28em;border-radius:50%;background:var(--ink)}
+.mq-row.rev .mq-track span::after{background:transparent;border:1.4px solid var(--ink)}
+
+/* split headings */
+.js-fx .sp .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
+.js-fx .sp .w>span,.js-fx .sp .ch{display:inline-block;transform:translateY(108%);transition:transform 1s var(--ease) var(--dl,0s)}
+.js-fx .sp.in .w>span,.js-fx .sp.in .ch{transform:none}
+.sp.done .ch{--dl:0s}
+.contact .ch{transition:transform .5s var(--ease) var(--dl,0s),color .3s}
+.contact .sp.done .ch:hover{transform:translateY(-14%) rotate(-6deg);color:var(--f3)}
+.contact .sp.done em .ch:hover{color:var(--ink)}
+
+/* generic reveal (uses translate so it composes with transforms) */
+.js-fx .rv{opacity:0;translate:0 32px;
+  transition-property:opacity,translate,transform,box-shadow,background,color;
+  transition-duration:1s,1s,.4s,.35s,.3s,.3s;transition-timing-function:var(--ease);
+  transition-delay:var(--dl,0s),var(--dl,0s),0s,0s,0s,0s}
+.js-fx .rv.in{opacity:1;translate:0 0}
+.js-fx .step.rv{translate:-40px 0}
+.js-fx .step.rv.in{translate:0 0}
+
+/* about: badge reveal drop */
+.js-fx #badge.rv{translate:0 -120px}
+.js-fx #badge.rv.in{translate:0 0;transition-duration:1.4s,1.4s,.4s,.35s,.3s,.3s;transition-timing-function:cubic-bezier(.3,1.5,.4,1)}
+.js-fx .swing{animation:none}
+
+/* results: dark band */
+#results.dark{position:relative;background:var(--ink);color:var(--on-dark);overflow:hidden;clip-path:inset(0 var(--ci,0px) round var(--cr,0px))}
+#results.dark .wrap{position:relative;z-index:1}
+#results.dark .eyebrow,#results.dark .lede{color:var(--on-dark-soft)}
+#results.dark em{color:var(--dark-em)}
+.scope{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9}
+#results .num{position:relative;overflow:hidden;background:rgba(255,253,242,.04);border-color:var(--dark-line);color:var(--on-dark);
+  transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));backdrop-filter:blur(2px)}
+#results .num:hover{--ty:-8px;background:rgba(255,253,242,.07);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+#results .num::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(255,253,242,.14),transparent 45%)}
+#results .num:hover::after{opacity:1}
+#results .num b i{color:var(--dark-em)}
+#results .num p{color:var(--on-dark-soft)}
+#results .num::before{content:"";position:absolute;left:26px;right:26px;top:0;height:2px;background:var(--on-dark);transform:scaleX(0);transform-origin:0 50%;transition:transform 1.2s var(--ease) calc(var(--dl,0s) + .3s)}
+#results .num.in::before{transform:scaleX(1)}
+
+/* skills */
+.js-fx .table .tile{opacity:0;translate:0 26px;rotate:x -75deg;scale:.85;
+  transition:transform .3s var(--ease),box-shadow .3s,opacity .7s var(--ease) var(--dl,0s),translate .9s var(--ease) var(--dl,0s),rotate .9s var(--ease) var(--dl,0s),scale .9s var(--ease) var(--dl,0s)}
+.js-fx .table.in .tile{opacity:1;translate:0 0;rotate:x 0deg;scale:1}
+.js-fx .table.in .tile.dim{opacity:.18;scale:.92}
+.table.done .tile{--dl:0s}
+.tile{position:relative;overflow:hidden}
+.tile::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(120px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.35),transparent 60%)}
+.tile:hover::after{opacity:1}
+.js-fx .tile:hover,.js-fx .tile:focus-visible{transform:perspective(500px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-6px) scale(1.08);z-index:2}
+
+/* work panels: staggered content, image push in */
+.panel .inner>div:first-child>*{opacity:0;translate:0 18px;transition:opacity .5s var(--ease),translate .7s var(--ease)}
+.panel.open .inner>div:first-child>*{opacity:1;translate:0 0}
+.panel.open .inner>div:first-child>:nth-child(1){transition-delay:.2s}
+.panel.open .inner>div:first-child>:nth-child(2){transition-delay:.27s}
+.panel.open .inner>div:first-child>:nth-child(3){transition-delay:.34s}
+.panel.open .inner>div:first-child>:nth-child(4){transition-delay:.41s}
+.panel.open .inner>div:first-child>:nth-child(5){transition-delay:.48s}
+.figure{overflow:hidden}
+.figure.photo img{transform:scale(1.18);transition:transform 1.6s var(--ease)}
+.panel.open .figure.photo img{transform:scale(1)}
+.figure.grid4 img{opacity:0;transform:scale(.8) rotate(-3deg);transition:opacity .6s,transform .8s var(--ease)}
+.panel.open .figure.grid4 img{opacity:1;transform:none}
+.panel.open .figure.grid4 img:nth-child(1){transition-delay:.25s}
+.panel.open .figure.grid4 img:nth-child(2){transition-delay:.35s}
+.panel.open .figure.grid4 img:nth-child(3){transition-delay:.45s}
+.panel.open .figure.grid4 img:nth-child(4){transition-delay:.55s}
+.figure b{display:inline-block;transform:translateY(40%);opacity:0;transition:transform .9s var(--ease) .3s,opacity .6s .3s}
+.panel.open .figure b{transform:none;opacity:1}
+.spine{transition:opacity .3s,letter-spacing .4s var(--ease)}
+.panel:not(.open):hover .spine{letter-spacing:.06em}
+.panel:not(.open):hover{background:#fff8dc}
+.panel{transition:flex-grow .7s var(--ease),background .3s}
+
+/* timeline rail and odometer */
+.steps{position:relative}
+.steps::after{content:"";position:absolute;right:-2px;top:0;width:3px;height:calc(var(--p,0)*100%);background:var(--ink);border-radius:3px}
+.steps::before{content:"";position:absolute;right:-8px;top:calc(var(--p,0)*100%);width:15px;height:15px;margin-top:-7px;border-radius:50%;background:var(--paper);border:3px solid var(--ink);z-index:1;box-shadow:0 0 0 6px rgba(27,29,58,.08)}
+.year .dg{display:inline-block;height:1em;overflow:hidden;vertical-align:top}
+.year .dg>span{display:flex;flex-direction:column;transform:translateY(calc(var(--n,0)*-1em));transition:transform .9s var(--ease) var(--dd,0s)}
+.year .dg>span>span{height:1em;line-height:1}
+
+/* honors wipe */
+.rows li{position:relative;overflow:hidden}
+.rows li::before{content:"";position:absolute;inset:0;background:var(--ink);transform:scaleX(0);transform-origin:0 50%;transition:transform .5s var(--ease)}
+.rows li:hover{background:transparent}
+.rows li:hover::before{transform:scaleX(1)}
+.rows li>*{position:relative}
+
+/* contact */
+.mail code{position:relative}
+.mail code::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:0 50%;transition:transform .6s var(--ease)}
+.mail:hover code::after{transform:scaleX(1)}
+
+@media (max-width:900px){
+  .hud{display:none}
+  .panel .inner>div:first-child>*{opacity:1;translate:0 0}
+  .figure.photo img{transform:none}
+  .figure.grid4 img{opacity:1;transform:none}
+  .figure b{transform:none;opacity:1}
+  .steps::after,.steps::before{display:none}
+  .marquee{transform:rotate(-3deg)}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain,.ghost span,.hero h1 .ln>span,.fx,.proof span,.portrait img,.scan,.hud::before{animation:none!important}
+  .scan{display:none}
+  .mq-track{animation:none}
+  .panel .inner>div:first-child>*,.figure.grid4 img,.figure b{opacity:1;translate:0 0;transform:none}
+  .figure.photo img{transform:none}
+}
+</style>
+<script>(function(){if(!matchMedia("(prefers-reduced-motion: reduce)").matches){var r=document.documentElement;r.classList.add("js-fx");setTimeout(function(){if(!window.__fxReady)r.classList.remove("js-fx")},3500)}})();</script>
+<!--BODY-->
+<div class="progress" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Rayan Shahzad, back to top"><span>RS</span><b>Rayan Shahzad</b></a>
+    <nav class="pills" aria-label="Sections">
+      <span class="pill-ind" aria-hidden="true"></span>
+      <a href="#about">About</a><a href="#results">Results</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#path">Experience</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero" id="hero">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="hud" aria-hidden="true"><span>X <b id="hx">0000</b></span><span>Y <b id="hy">0000</b></span></div>
+  <div class="ghost" aria-hidden="true"><span style="--i:0">R</span><span style="--i:1">A</span><span style="--i:2">Y</span><span style="--i:3">A</span><span style="--i:4">N</span></div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow fx" style="--d:.1s">Rayan Shahzad · Mechanical engineer</p>
+      <h1><span class="ln"><span style="--i:0">Process &amp;</span></span><span class="ln"><span style="--i:1">Hardware</span></span><span class="ln"><span style="--i:2">Engineer<i>.</i></span></span></h1>
+      <p class="hero-sub fx" style="--d:.65s">I build the whole system, then I measure it. Process entrepreneur, automation geek and MSc candidate at KAUST.</p>
+      <div class="proof"><span style="--d:.85s">MSc KAUST · 3.92 GPA</span><span style="--d:.95s">Ex BAT · Ingredion · Nestlé</span><span style="--d:1.05s">Graduating Dec 2026</span></div>
+    </div>
+    <div class="portrait"><img src="assets/rayan-full.webp" width="614" height="2075" alt="Rayan Shahzad standing, in a maroon shirt and khaki trousers"><span class="scan" aria-hidden="true"></span></div>
+    <div class="hero-cta rise d2">
+      <a class="btn solid" href="#work">Explore work →</a>
+      <a class="btn" href="#contact">Let's talk</a>
+      <a class="btn" href="https://www.linkedin.com/in/rayanshahzad" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</div>
+
+<div class="marquee-wrap" aria-hidden="true"><div class="marquee">
+  <div class="mq-row"><div class="mq-track"><span>Process engineering</span><span>Automation</span><span>SCADA</span><span>PCB design</span><span>Embedded firmware</span><span>OEE</span><span>Lean</span><span>FEA</span><span>Rapid prototyping</span><span>Process engineering</span><span>Automation</span><span>SCADA</span><span>PCB design</span><span>Embedded firmware</span><span>OEE</span><span>Lean</span><span>FEA</span><span>Rapid prototyping</span></div></div>
+  <div class="mq-row rev"><div class="mq-track"><span>Build it</span><span>Instrument it</span><span>Test it</span><span>Prove it</span><span>Build it</span><span>Instrument it</span><span>Test it</span><span>Prove it</span><span>Build it</span><span>Instrument it</span><span>Test it</span><span>Prove it</span><span>Build it</span><span>Instrument it</span><span>Test it</span><span>Prove it</span></div></div>
+</div></div>
+
+<section id="about"><div class="wrap about">
+  <div>
+    <p class="eyebrow">About</p>
+    <h2>Hi, I'm <em>Rayan.</em></h2>
+    <p>Mechanical engineer from UET Lahore, finishing an MSc at KAUST in December 2026. I design and build electromechanical systems end to end: the mechanical and fluidic hardware, custom PCBs, embedded firmware and the software around them.</p>
+    <p class="more">Before KAUST I spent two years improving production at British American Tobacco and Ingredion, where every change was judged by measured OEE, waste and cost. I bring that habit to everything I build: make the rig, instrument it and test it against numbers. I also wrote a novel, The Tangerine Dusk.</p>
+    <div class="links">
+      <a class="btn solid" href="https://www.linkedin.com/in/rayanshahzad" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn" href="https://amazon.com/author/rayanshahzad" target="_blank" rel="noopener">Author page ↗</a>
+    </div>
+  </div>
+
+  <button class="badge" id="badge" type="button" aria-label="ID badge. Press to flip it over.">
+    <div class="swing">
+      <div class="strap"></div>
+      <div class="card3d">
+        <div class="face">
+          <div class="id-top"><span>Operator ID</span><span>2026</span></div>
+          <div class="id-photo"><img src="assets/rayan-head.webp" width="525" height="749" alt="Portrait of Rayan Shahzad"></div>
+          <div class="id-name">RAYAN SHAHZAD</div>
+          <div class="id-role">Process &amp; Hardware Engineer</div>
+          <div class="id-fields">
+            <div><small>Experience</small>3+ years</div>
+            <div><small>Field</small>Operations</div>
+            <div><small>Base</small>Saudi Arabia</div>
+          </div>
+          <div class="barcode"></div>
+        </div>
+        <div class="face back">
+          <h3>What I am</h3>
+          <ul>
+            <li>Automation lead<small>Touchless production pilot at BAT</small></li>
+            <li>Operations leader<small>Team of 40+ at over 85% OEE</small></li>
+            <li>Hardware builder<small>10 prototypes, 4 custom PCBs</small></li>
+            <li>Startup CTO<small>Elexint, built at KAUST</small></li>
+            <li>Published novelist<small>The Tangerine Dusk</small></li>
+          </ul>
+          <div class="sign">Rayan</div>
+        </div>
+      </div>
+    </div>
+  </button>
+
+  <div>
+    <p class="eyebrow">Quick facts</p>
+    <dl class="facts">
+      <div><dt>Based in</dt><dd>KAUST, Saudi Arabia</dd></div>
+      <div><dt>Studying</dt><dd>MSc TIE, KAUST · 3.92</dd></div>
+      <div><dt>Engineering</dt><dd>BSc Mechanical, UET · 3.78</dd></div>
+      <div><dt>Building</dt><dd>Elexint, as CTO</dd></div>
+      <div><dt>Previously</dt><dd>BAT · Ingredion · Nestlé</dd></div>
+      <div><dt>Speaks</dt><dd>English, Urdu and three more</dd></div>
+    </dl>
+    <p class="quote">"Validate designs against real material, not geometry alone."</p>
+  </div>
+</div></section>
+
+<section id="results" class="dark">
+  <canvas class="scope" aria-hidden="true"></canvas>
+  <div class="wrap">
+  <p class="eyebrow">Results</p>
+  <h2>Numbers I can <em>stand behind.</em></h2>
+  <p class="lede">From factory floors to labs, startups and competition stages. Every figure is one I can explain in detail.</p>
+  <div class="nums">
+    <div class="num"><small class="src">BAT</small><b><span class="cnt" data-to="80">80</span><i>%</i></b><div><strong>Fewer manual touches</strong><p>In BAT Pakistan's first touchless production pilot, where I was Project Process Lead.</p></div></div>
+    <div class="num"><small class="src">Innox Academy</small><b><span class="cnt" data-to="10">10</span></b><div><strong>Working prototypes</strong><p>And 4 custom PCBs in four months as a Technical Fellow in Shenzhen.</p></div></div>
+    <div class="num"><small class="src">Ingredion</small><b><span class="cnt" data-to="30">30</span><i>%</i></b><div><strong>Less downtime</strong><p>After streamlining permit flow across 20+ plant sections.</p></div></div>
+    <div class="num"><small class="src">Elexint</small><b><span class="cnt" data-to="130">130</span><i>+</i></b><div><strong>Pilot users</strong><p>Tried the Elexint dispenser at workshops. 200 dispense cycles logged.</p></div></div>
+    <div class="num"><small class="src">BAT</small><b>£<span class="cnt" data-to="3">3</span>M</b><div><strong>Estimated cost savings</strong><p>From KPI, OEE and value stream work at the Jhelum factory.</p></div></div>
+    <div class="num"><small class="src">KAUST</small><b><span class="cnt" data-to="1">1</span><i>st</i></b><div><strong>Flagship IBPC winner</strong><p>Won KAUST's flagship International Business Plan Competition in 2026.</p></div></div>
+    <div class="num"><small class="src">UET Lahore</small><b><span class="cnt" data-to="6">6</span></b><div><strong>Semesters on the Dean's Honor Roll</strong><p>During my BSc in Mechanical Engineering at UET Lahore.</p></div></div>
+    <div class="num"><small class="src">KAUST</small><b><span class="cnt" data-to="100">100</span><i>%</i></b><div><strong>Funded fellowship</strong><p>Full KAUST fellowship for the MSc in Technology, Innovation and Entrepreneurship.</p></div></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <p class="eyebrow">Skills</p>
+  <h2>The periodic table <em>of my toolkit.</em></h2>
+  <p class="lede"><span id="count"></span> elements in five families. Hover a tile to read where I used it, or pick a family to light it up.</p>
+  <div class="fams" id="fams"></div>
+  <div class="skills">
+    <div class="table" id="table"></div>
+    <aside class="detail" id="detail" aria-live="polite"></aside>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <p class="eyebrow">Work</p>
+  <h2>Things I've <em>built.</em></h2>
+  <p class="lede">Factory automation, a precision dispenser, consumer hardware, a hydro turbine and a water generator. Pick a panel to open it.</p>
+  <div class="panels" id="panels">
+    <article class="panel open" tabindex="0">
+      <div class="spine">Touchless pilot</div>
+      <div class="inner">
+        <div>
+          <p class="eyebrow">Industrial automation · BAT Pakistan</p>
+          <h3>Touchless production pilot</h3>
+          <p>Took people out of the control loop in primary manufacturing: conditioning, cutting and drying. As Project Process Lead I mapped every manual touch, shaped the architecture and specifications with the system integrator and drove delivery through installation and start up.</p>
+          <ul>
+            <li>One redundant SCADA control room across 21 work centres, Rockwell and Siemens</li>
+            <li>Dryers retrofitted so measured moisture feeds the PID loops directly</li>
+            <li>Specified, tested twice (FAT and SAT) and started up on a 31 week plan</li>
+            <li>Introduced mean time between touches as a metric next to MTBF and MTTR</li>
+          </ul>
+          <div class="chips"><span>FactoryTalk SCADA</span><span>CompactLogix</span><span>EtherNet/IP</span><span>HART</span><span>13 functions</span></div>
+        </div>
+        <div class="figure"><b>80%</b><span>Fewer manual touches</span></div>
+      </div>
+    </article>
+    <article class="panel" tabindex="0">
+      <div class="spine">Elexint</div>
+      <div class="inner">
+        <div>
+          <p class="eyebrow">Mechatronics · Elexint · Cofounder and CTO</p>
+          <h3>Eight channel gravimetric fragrance dispenser</h3>
+          <p>Doses by measured mass instead of pump run time, so tubing wear and viscosity changes never creep into the blend. I designed the PCB, wrote the firmware and built every machine.</p>
+          <ul>
+            <li>Closed loop interface with custom designed firmware and hardware</li>
+            <li>Custom designed PCB incorporating multi channel inputs</li>
+            <li>Per pump drip offsets, an 800 ms settle and a reverse purge between channels</li>
+            <li>200 dispense cycles logged, working toward ±0.1 g on every pump</li>
+          </ul>
+          <div class="chips"><span>Rapid prototyping</span><span>Scaling in China</span><span>PCB design</span></div>
+        </div>
+        <div class="figure photo wide"><img src="assets/elexint-render.webp" alt="The Elexint dispenser in a black housing with an angled touchscreen and a row of scent vials, on a wooden sideboard" loading="lazy"><span>Elexint dispenser</span></div>
+      </div>
+    </article>
+    <article class="panel" tabindex="0">
+      <div class="spine">Innox prototypes</div>
+      <div class="inner">
+        <div>
+          <p class="eyebrow">Consumer hardware · Innox Academy, Shenzhen</p>
+          <h3>Ten prototypes in four months</h3>
+          <p>Technical Fellow building AI enabled consumer hardware from breadboard to PCB to enclosure, working with design and manufacturing partners in Shenzhen.</p>
+          <ul>
+            <li>On device mood inference that personalizes product output in real time</li>
+            <li>Full stack per device: firmware, Flask servers, web and mobile apps</li>
+            <li>Raspberry Pi 5 and ESP32 builds taken to 4 custom PCBs</li>
+            <li>Enclosures designed for manufacture in SolidWorks</li>
+          </ul>
+        </div>
+        <div class="figure grid4">
+          <img src="assets/innox-1.webp" alt="Open white frame prototype holding scent vials above a driver board" loading="lazy">
+          <img src="assets/innox-2.webp" alt="Blue enclosure with four peristaltic pumps and a touchscreen" loading="lazy">
+          <img src="assets/innox-3.webp" alt="House shaped white enclosure with an angled touchscreen and vials inside" loading="lazy">
+          <img src="assets/innox-4.webp" alt="White cabinet dispenser with a touchscreen blending wheel and a row of vials" loading="lazy">
+        </div>
+      </div>
+    </article>
+    <article class="panel" tabindex="0">
+      <div class="spine">Hydro turbine</div>
+      <div class="inner">
+        <div>
+          <p class="eyebrow">Fluid machinery · ERU lab group project</p>
+          <h3>Eight jet hydro turbine in PVC</h3>
+          <p>Built to recover energy from water already flowing through the lab. I led machine design, blade FEA and fabrication, and brought in Beta Pipes to sponsor all of the material.</p>
+          <ul>
+            <li>Stepped PVC manifold feeding 8 jets into an 8 blade runner</li>
+            <li>Voltage rose from 1.2 V to 4.6 V as jets closed at fixed flow (R² 0.996)</li>
+            <li>Next: load, speed and head readings for a full efficiency curve</li>
+          </ul>
+          <div class="chips"><span>SolidWorks</span><span>ANSYS FEA</span><span>Experiment design</span></div>
+        </div>
+        <div class="figure photo"><img src="assets/turbine.webp" alt="The finished turbine on a lab hydraulic bench: a PVC ring manifold feeding eight tubes into a central pipe" loading="lazy"><span>On the lab hydraulic bench</span></div>
+      </div>
+    </article>
+    <article class="panel" tabindex="0">
+      <div class="spine">Water generator</div>
+      <div class="inner">
+        <div>
+          <p class="eyebrow">Thermal systems · BSc final year project, UET</p>
+          <h3>Atmospheric water generator</h3>
+          <p>A vapor compression machine that pulls water out of humid air, built from refrigeration parts on a welded steel frame. My part was the mechanical design and hardware integration.</p>
+          <ul>
+            <li>R134a hermetic compressor, capillary expansion and a finned evaporator coil</li>
+            <li>Instrumented with a thermocouple, anemometer and hygrograph</li>
+            <li>Two 12 hour outdoor runs in Lahore at 66 W input</li>
+          </ul>
+          <div class="chips"><span>SolidWorks</span><span>ANSYS Fluent</span><span>EES</span></div>
+        </div>
+        <div class="figure photo"><img src="assets/awg.webp" alt="The water generator in its clear acrylic case, with the evaporator coil on top and the compressor below" loading="lazy"><span>Final build in its acrylic case</span></div>
+      </div>
+    </article>
+    <article class="panel" tabindex="0">
+      <div class="spine">Side builds</div>
+      <div class="inner">
+        <div>
+          <p class="eyebrow">Embedded and automation · Side builds</p>
+          <h3>Smaller builds, shipped fast</h3>
+          <p>Getting sensors, single board computers, models and APIs to work together quickly.</p>
+          <ul>
+            <li>Edge voice assistant: Whisper speech to text, an LLM reply and speech out on a touchscreen board</li>
+            <li>Environmental logger: BME280 over I²C, logged to CSV and published over MQTT</li>
+            <li>Raspberry Pi vlog camera with its own touchscreen interface</li>
+            <li>Self hosted agent routing Telegram requests to Google Calendar and Docs</li>
+            <li>Daily GitHub Actions pipeline that pulls two APIs and pushes results to Telegram</li>
+          </ul>
+        </div>
+        <div class="figure"><b>5</b><span>Side builds in Python, Pi and ESP32</span></div>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section id="path"><div class="wrap">
+  <p class="eyebrow">Experience</p>
+  <h2>Education &amp; <em>experience.</em></h2>
+  <p class="lede">From Lahore to Jhelum to KAUST to Shenzhen. One path, scroll to follow it.</p>
+  <div class="path">
+    <div class="steps" id="steps">
+      <div class="step" data-year="2019"><span class="org l3" aria-hidden="true">UET</span><span class="when">2019 to 2023</span><small>Education</small><h3>BSc Hons Mechanical Engineering</h3><p>University of Engineering and Technology, Lahore · CGPA 3.78 / 4.00 · Dean's Honor Roll</p></div>
+      <div class="step" data-year="2022"><span class="org" aria-hidden="true">AS</span><span class="when">Apr 2022 to May 2023</span><small>Leadership</small><h3>General Secretary, ASHRAE</h3><p>Lahore · Ran large public events and secured sponsorships, after three years as Media Director.</p></div>
+      <div class="step" data-year="2022"><span class="org" aria-hidden="true">N</span><span class="when">Jun to Aug 2022</span><small>Internship</small><h3>Supply Chain Engineering Intern, Nestlé</h3><p>Lahore · Automated vendor notifications for ledgers and invoices. One of 0.5% accepted from 17,000 applicants.</p></div>
+      <div class="step" data-year="2023"><span class="org l3" aria-hidden="true">BAT</span><span class="when">Jul to Aug 2023</span><small>Internship</small><h3>Operations Engineer, BAT</h3><p>Three sales projects on recovery discrepancies, reverse route planning and premium brands.</p></div>
+      <div class="step" data-year="2023"><span class="org" aria-hidden="true">IN</span><span class="when">Oct to Dec 2023</span><small>Experience</small><h3>Management Trainee Officer, Ingredion</h3><p>Rafhan Maize Products, Faisalabad · Streamlined permit flow across 20+ plant sections, cutting downtime by up to 30%.</p></div>
+      <div class="step" data-year="2023"><span class="org l3" aria-hidden="true">BAT</span><span class="when">Dec 2023 to Jul 2025</span><small>Experience</small><h3>Process Lead, Operations, BAT</h3><p>Primary manufacturing, Jhelum · Project Process Lead on the touchless pilot. Held OEE above 85% with a team of 40+ and delivered an estimated £3M in savings.</p></div>
+      <div class="step" data-year="2025"><span class="org" aria-hidden="true">K</span><span class="when">Aug 2025 to Dec 2026</span><small>Education</small><h3>MSc Technology, Innovation and Entrepreneurship</h3><p>King Abdullah University of Science and Technology (KAUST) · CGPA 3.92 / 4.00 · Full fellowship</p></div>
+      <div class="step" data-year="2025"><span class="org" aria-hidden="true">EL</span><span class="when">Dec 2025 to now</span><small>Founder</small><h3>Cofounder and CTO, Elexint</h3><p>KAUST affiliated hardware venture · PCB design, firmware and every machine build.</p></div>
+      <div class="step" data-year="2026"><span class="org" aria-hidden="true">IX</span><span class="when">Jul to Oct 2026</span><small>Experience</small><h3>Technical Fellow, Innox Academy</h3><p>Shenzhen · Rapid prototyping and mechatronics: 10 prototypes and 4 custom PCBs.</p></div>
+    </div>
+    <div class="year" id="year" aria-hidden="true">2019</div>
+  </div>
+</div></section>
+
+<section id="honors"><div class="wrap honors">
+  <div>
+    <p class="eyebrow">Honors &amp; certifications</p>
+    <h2>Always <em>learning.</em></h2>
+    <p class="lede">Fellowships, awards, competition finals and certifications.</p>
+  </div>
+  <ul class="rows">
+    <li><strong>KAUST full fellowship</strong><span>Fellowship</span></li>
+    <li><strong>IWS Level 4, Loss Elimination Pillar Lead</strong><span>Certification</span></li>
+    <li><strong>LEAP 2026, Elexint prototype on show</strong><span>Exhibition</span></li>
+    <li><strong>Dean's Honor Roll, UET Lahore</strong><span>Honor</span></li>
+    <li><strong>SUSI 2022 Cohort Finalist</strong><span>Honor</span></li>
+    <li><strong>Hult Prize National Finalist</strong><span>Competition</span></li>
+    <li><strong>Flagship IBPC KAUST Winner 2026</strong><span>Competition</span></li>
+    <li><strong>Best Deputy Director 2020, ASHRAE</strong><span>Honor</span></li>
+    <li><strong>Machine Design Part I</strong><span>Certificate</span></li>
+    <li><strong>Interfacing with the Arduino</strong><span>Certificate</span></li>
+  </ul>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <p class="eyebrow">Contact</p>
+  <h2>Let's build <em>something real.</em></h2>
+  <p class="lede">I enjoy hard problems on production floors, in labs and inside hardware. If you are working on something in that space, I would love to hear about it.</p>
+  <div class="mail">
+    <code id="email">rayan.shahzad81@gmail.com</code>
+    <button class="btn" id="copy" type="button">Copy email</button>
+    <a class="btn solid" href="https://www.linkedin.com/in/rayanshahzad" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn" href="https://amazon.com/author/rayanshahzad" target="_blank" rel="noopener">Amazon author page ↗</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Rayan Shahzad</span><span class="foot-links"><a href="https://www.linkedin.com/in/rayanshahzad" target="_blank" rel="noopener">LinkedIn</a><a href="https://amazon.com/author/rayanshahzad" target="_blank" rel="noopener">Amazon</a><span>KAUST, Saudi Arabia</span></span></div></footer>
+
+<script>
+// ---- Skills: edit this list to add or remove tiles ----
+const FAMILIES = [
+  ["Operations","--f1","#fffdf2"],["Automation","--f2","#fffdf2"],["Hardware","--f3","#fffdf2"],["Software","--f4","#1b1d3a"],["Languages","--f5","#1b1d3a"]
+];
+const SKILLS = [
+  ["Vs","Value Stream Mapping",0,"Ran a VSM pilot linking supply chain and production at a 15 s takt, saving 25%."],
+  ["Oe","OEE",0,"Held OEE above 85% with tobacco waste under 2% at BAT."],
+  ["Iw","IWS",0,"Integrated Work Systems Level 4 and Loss Elimination Pillar Lead."],
+  ["Le","Lean",0,"Waste and loss elimination on a high volume primary line."],
+  ["Rc","Root Cause Analysis",0,"Failure analysis of the knockout process cut tobacco waste by 0.9%."],
+  ["Kp","KPI Dashboards",0,"Owned KPIs and dashboards across the Jhelum site."],
+  ["Pm","Production Management",0,"Led a primary manufacturing team of 40+."],
+  ["Te","Techno Economic Analysis",0,"Capex, payback and life cycle cost for new equipment and ventures."],
+  ["Sd","SCADA",1,"Redundant FactoryTalk SCADA across 21 work centres in the touchless pilot."],
+  ["Pl","PLC Integration",1,"CompactLogix migration and Siemens OEM machines on one network."],
+  ["Pi","PID Control",1,"600+ PID loops upgraded; moisture fed straight into dryer loops."],
+  ["Ip","Industrial Networks",1,"EtherNet/IP, Device Level Ring, HART instruments and E300 relays."],
+  ["Fs","Functional Specs",1,"I/O and alarm lists, cause and effect matrix, FDS, FAT and SAT."],
+  ["Cd","CAD",2,"SolidWorks, Fusion 360 and Rhino for turbines, frames and enclosures."],
+  ["Pc","PCB Design",2,"4 custom PCBs, including the Elexint carrier board, Rev A and Rev B."],
+  ["Em","Embedded Firmware",2,"ESP32 and Raspberry Pi 5 in C/C++ and MicroPython; closed loop dosing."],
+  ["Sn","Sensors",2,"Load cells on HX711, RFID, Hall sensors, BME280 and camera modules."],
+  ["Fe","FEA and CFD",2,"ANSYS for turbine blade deflection and refrigerant flow."],
+  ["Ft","Fluid and Thermal",2,"Peristaltic dosing, a hydro turbine and a vapor compression cycle."],
+  ["Rp","Rapid Prototyping",2,"10 prototypes in four months: 3D printing, machining and assembly."],
+  ["Py","Python",3,"Firmware tools, data logging, pipelines and analysis."],
+  ["Fl","Flask",3,"Touch interfaces and device servers on Raspberry Pi."],
+  ["Ml","MATLAB",3,"Analysis for fluid and thermal experiments."],
+  ["Au","Automation Pipelines",3,"n8n agents and scheduled GitHub Actions jobs."],
+  ["Ai","LLM APIs",3,"Voice assistant and on device personalization demos."],
+  ["En","English",4,"Native or bilingual."],
+  ["Ur","Urdu",4,"Native or bilingual."],
+  ["Ar","Arabic",4,"Elementary."],
+  ["De","German",4,"Elementary."],
+  ["Fr","French",4,"Elementary."]
+];
+const $ = s => document.querySelector(s);
+const table = $("#table"), detail = $("#detail"), fams = $("#fams");
+$("#count").textContent = SKILLS.length;
+function show(i){
+  const [sym,name,f,note] = SKILLS[i];
+  detail.innerHTML = `<small>${String(i+1).padStart(2,"0")} · ${FAMILIES[f][0]}</small><b>${sym}</b><strong>${name}</strong><p>${note}</p>`;
+}
+SKILLS.forEach(([sym,name,f],i)=>{
+  const b = document.createElement("button");
+  b.className = "tile"; b.type = "button"; b.dataset.f = f;
+  b.style.setProperty("--c",`var(${FAMILIES[f][1]})`); b.style.setProperty("--t",FAMILIES[f][2]);
+  b.innerHTML = `<small>${String(i+1).padStart(2,"0")}</small><b>${sym}</b><span>${name}</span>`;
+  ["mouseenter","focus","click"].forEach(e=>b.addEventListener(e,()=>show(i)));
+  table.appendChild(b);
+});
+FAMILIES.forEach(([name,c],f)=>{
+  const b = document.createElement("button");
+  b.className = "fam"; b.type = "button"; b.setAttribute("aria-pressed","false");
+  b.style.setProperty("--c",`var(${c})`); b.innerHTML = `<i></i>${name}`;
+  b.addEventListener("click",()=>{
+    const on = b.getAttribute("aria-pressed")==="true";
+    fams.querySelectorAll(".fam").forEach(x=>x.setAttribute("aria-pressed","false"));
+    if(!on) b.setAttribute("aria-pressed","true");
+    table.querySelectorAll(".tile").forEach(t=>t.classList.toggle("dim",!on && +t.dataset.f!==f));
+  });
+  fams.appendChild(b);
+});
+show(0);
+
+// ---- Badge flip on tap ----
+$("#badge").addEventListener("click",e=>e.currentTarget.classList.toggle("flipped"));
+
+// ---- Work panels ----
+const panels = [...document.querySelectorAll(".panel")];
+const open = p => panels.forEach(x=>x.classList.toggle("open",x===p));
+panels.forEach(p=>["mouseenter","focus","click"].forEach(e=>p.addEventListener(e,()=>open(p))));
+
+// ---- Timeline year and nav highlight ----
+const mid = {rootMargin:"-45% 0px -45% 0px"};
+const steps = [...document.querySelectorAll(".step")];
+const yearObs = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){
+  window.setYear ? setYear(e.target.dataset.year) : ($("#year").textContent = e.target.dataset.year);
+  steps.forEach(s=>s.classList.toggle("now",s===e.target));
+}}),mid);
+steps.forEach(s=>yearObs.observe(s));
+const links = [...document.querySelectorAll(".pills a")];
+const navObs = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting)
+  links.forEach(l=>l.classList.toggle("on",l.getAttribute("href")==="#"+e.target.id));
+}),mid);
+document.querySelectorAll("section[id]").forEach(x=>navObs.observe(x));
+
+// ---- Copy email ----
+$("#copy").addEventListener("click",async e=>{
+  const el = $("#email");
+  try{ await navigator.clipboard.writeText(el.textContent); e.target.textContent="Copied"; }
+  catch{ getSelection().selectAllChildren(el); e.target.textContent="Selected, now copy"; }
+  setTimeout(()=>e.target.textContent="Copy email",1800);
+});
+
+// ===== motion layer =====
+(() => {
+  const root = document.documentElement;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  // ---- odometer year (works with or without motion) ----
+  const yearEl = $("#year");
+  let built = false;
+  window.setYear = (y) => {
+    if (!yearEl) return;
+    if (!built) {
+      yearEl.textContent = "";
+      for (let d = 0; d < 4; d++) {
+        const dg = document.createElement("span"); dg.className = "dg";
+        const col = document.createElement("span");
+        for (let n = 0; n < 10; n++) { const s = document.createElement("span"); s.textContent = n; col.appendChild(s); }
+        dg.appendChild(col); dg.style.setProperty("--dd", d * 70 + "ms"); yearEl.appendChild(dg);
+      }
+      built = true;
+    }
+    String(y).padStart(4, "0").split("").forEach((c, i) => yearEl.children[i].firstChild.style.setProperty("--n", c));
+  };
+  setYear(yearEl ? yearEl.textContent.trim() || "2019" : "2019");
+
+  if (reduce || !root.classList.contains("js-fx")) { root.classList.remove("js-fx"); window.__fxReady = true; return; }
+
+  // ---- split headings into masked words or letters ----
+  function split(el, letters) {
+    const label = el.textContent.replace(/\s+/g, " ").trim();
+    let i = 0;
+    const walk = (node) => {
+      [...node.childNodes].forEach((n) => {
+        if (n.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach((p) => {
+            if (!p) return;
+            if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(" ")); return; }
+            const w = document.createElement("span"); w.className = "w"; w.setAttribute("aria-hidden", "true");
+            if (letters) {
+              [...p].forEach((c) => { const s = document.createElement("span"); s.className = "ch"; s.textContent = c; s.style.setProperty("--dl", i++ * 32 + "ms"); w.appendChild(s); });
+            } else {
+              const s = document.createElement("span"); s.textContent = p; s.style.setProperty("--dl", i++ * 75 + "ms"); w.appendChild(s);
+            }
+            frag.appendChild(w);
+          });
+          n.replaceWith(frag);
+        } else if (n.nodeType === 1 && n.tagName !== "BR") walk(n);
+      });
+    };
+    walk(el);
+    el.setAttribute("aria-label", label);
+    el.classList.add("sp");
+  }
+  $$("section h2").forEach((h) => split(h, !!h.closest(".contact")));
+
+  // ---- reveal on scroll ----
+  const groups = [".nums .num", ".steps .step", ".rows li", ".facts > div"];
+  groups.forEach((g) => $$(g).forEach((el, i) => { el.classList.add("rv"); el.style.setProperty("--dl", (i % 8) * 80 + "ms"); }));
+  $$(".lede, .links, .quote, .mail, .fams, #badge, .about > div:first-child > p").forEach((el) => el.classList.add("rv"));
+  const table = $("#table");
+  if (table) $$(".tile", table).forEach((t, i) => t.style.setProperty("--dl", i * 24 + "ms"));
+
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return;
+    const t = e.target;
+    t.classList.add("in"); io.unobserve(t);
+    setTimeout(() => t.classList.add("done"), 1800);
+    if (t.classList.contains("nums")) countUp();
+  }), { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+  $$(".sp, .rv, #table, .nums").forEach((el) => io.observe(el));
+
+  // ---- count up ----
+  let counted = false;
+  function countUp() {
+    if (counted) return; counted = true;
+    $$(".cnt").forEach((el, i) => {
+      const to = +el.dataset.to, t0 = performance.now() + i * 90, dur = 1700;
+      const step = (now) => {
+        const p = clamp((now - t0) / dur, 0, 1);
+        const e = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+        el.textContent = Math.round(to * e).toLocaleString("en-US");
+        if (p < 1) requestAnimationFrame(step);
+      };
+      el.textContent = "0"; requestAnimationFrame(step);
+    });
+  }
+
+  // ---- skills detail: decode the symbol ----
+  const origShow = window.show;
+  if (typeof origShow === "function") {
+    const glyphs = "ABCDEFGHIKLMNOPRSTUVXYZ";
+    let timer;
+    window.show = (i) => {
+      origShow(i);
+      const b = $("#detail b"); if (!b) return;
+      const final = b.textContent; let f = 0; clearInterval(timer);
+      timer = setInterval(() => {
+        f++;
+        b.textContent = f > 7 ? final : glyphs[(Math.random() * glyphs.length) | 0] + glyphs[(Math.random() * glyphs.length) | 0].toLowerCase();
+        if (f > 7) clearInterval(timer);
+      }, 40);
+    };
+  }
+
+  // ---- pill indicator ----
+  const pills = $(".pills"), ind = $(".pill-ind");
+  const placeInd = () => {
+    const a = $(".pills a.on");
+    if (!a) { ind.style.opacity = 0; return; }
+    ind.style.opacity = 1; ind.style.left = a.offsetLeft + "px"; ind.style.width = a.offsetWidth + "px";
+  };
+  if (pills && ind) {
+    pills.classList.add("ind");
+    new MutationObserver(placeInd).observe(pills, { subtree: true, attributes: true, attributeFilter: ["class"] });
+    addEventListener("resize", placeInd);
+  }
+
+  // ---- pointer state ----
+  let mx = -9999, my = -9999, lastMove = 0;
+  addEventListener("pointermove", (e) => { if (e.pointerType !== "mouse") return; mx = e.clientX; my = e.clientY; lastMove = performance.now(); }, { passive: true });
+
+  // ---- magnetic buttons, tilt ----
+  if (fine) {
+
+    $$(".btn").forEach((b) => {
+      b.style.transition = "transform .45s cubic-bezier(.2,.8,.2,1), background .2s, color .2s";
+      b.addEventListener("pointermove", (e) => {
+        const r = b.getBoundingClientRect();
+        b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.25}px, ${(e.clientY - r.top - r.height / 2) * 0.35}px)`;
+      });
+      b.addEventListener("pointerleave", () => { b.style.transform = ""; });
+    });
+
+    const tilt = (el, max) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        el.style.setProperty("--ry", (x - 0.5) * max + "deg"); el.style.setProperty("--rx", (0.5 - y) * max + "deg");
+        el.style.setProperty("--mx", x * 100 + "%"); el.style.setProperty("--my", y * 100 + "%");
+      });
+      el.addEventListener("pointerleave", () => { el.style.setProperty("--rx", "0deg"); el.style.setProperty("--ry", "0deg"); });
+    };
+    $$("#results .num").forEach((el) => tilt(el, 10));
+    $$(".tile").forEach((el) => tilt(el, 22));
+  }
+
+  // ---- scroll state ----
+  let sy = scrollY, lastY = scrollY, vel = 0, dir = 1;
+  addEventListener("scroll", () => { sy = scrollY; }, { passive: true });
+
+  // ---- elements driven every frame ----
+  const progress = $(".progress"), nav = $(".nav");
+  const hero = $("#hero"), ghost = $(".ghost"), portrait = $(".portrait"), hx = $("#hx"), hy = $("#hy");
+  const results = $("#results"), steps = $("#steps"), sw = $(".swing"), badge = $("#badge");
+  const mqRows = $$(".mq-row"), mqWrap = $(".marquee");
+  const anims = $$(".mq-track").map((t) => (t.getAnimations ? t.getAnimations()[0] : null)).filter(Boolean);
+
+  // visibility flags
+  const vis = new Map();
+  const vio = new IntersectionObserver((es) => es.forEach((e) => vis.set(e.target, e.isIntersecting)), { rootMargin: "100px" });
+  [hero, results, badge, mqWrap].forEach((el) => el && vio.observe(el));
+
+  // ---- hero dot field ----
+  const field = $("#field"), fctx = field && field.getContext("2d");
+  let fW = 0, fH = 0, pts = [];
+  const sizeField = () => {
+    if (!field) return;
+    const r = hero.getBoundingClientRect(), dpr = Math.min(2, devicePixelRatio || 1);
+    fW = r.width; fH = r.height; field.width = fW * dpr; field.height = fH * dpr;
+    fctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const g = fW < 700 ? 24 : 28; pts = [];
+    for (let y = g / 2; y < fH; y += g) for (let x = g / 2; x < fW; x += g) pts.push({ x, y, ox: 0, oy: 0, s: 0 });
+  };
+  const drawField = (t) => {
+    const r = hero.getBoundingClientRect();
+    let px = mx - r.left, py = my - r.top;
+    if (t - lastMove > 2500 || mx < -1000) { // idle probe so the field stays alive on touch screens
+      px = fW * (0.5 + 0.32 * Math.sin(t * 0.00031)); py = fH * (0.5 + 0.3 * Math.sin(t * 0.00047 + 1.3));
+    }
+    fctx.clearRect(0, 0, fW, fH);
+    const R = 170, R2 = R * R;
+    for (const p of pts) {
+      const dx = p.x - px, dy = p.y - py, d2 = dx * dx + dy * dy;
+      let tx = 0, ty = 0, s = 0;
+      if (d2 < R2) { const d = Math.sqrt(d2) || 1, f = 1 - d / R; s = f * f; tx = (dx / d) * f * 26; ty = (dy / d) * f * 26; }
+      p.ox = lerp(p.ox, tx, 0.1); p.oy = lerp(p.oy, ty, 0.1); p.s = lerp(p.s, s, 0.12);
+      const wave = Math.sin(t * 0.0011 + p.x * 0.011 + p.y * 0.007) * 1.4;
+      fctx.fillStyle = `rgba(27,29,58,${0.12 + p.s * 0.55})`;
+      fctx.beginPath(); fctx.arc(p.x + p.ox, p.y + p.oy + wave, 1.05 + p.s * 1.9, 0, 6.2832); fctx.fill();
+    }
+    if (!fine) return;
+    // measuring crosshair
+    fctx.save(); fctx.strokeStyle = "rgba(27,29,58,.16)"; fctx.lineWidth = 1; fctx.setLineDash([3, 7]);
+    fctx.beginPath(); fctx.moveTo(0, py); fctx.lineTo(fW, py); fctx.moveTo(px, 0); fctx.lineTo(px, fH); fctx.stroke();
+    fctx.setLineDash([]); fctx.strokeStyle = "rgba(27,29,58,.45)";
+    fctx.beginPath(); fctx.arc(px, py, 14, 0, 6.2832); fctx.stroke(); fctx.restore();
+    if (hx) { hx.textContent = String(Math.max(0, Math.round(px))).padStart(4, "0"); hy.textContent = String(Math.max(0, Math.round(py))).padStart(4, "0"); }
+  };
+
+  // ---- results oscilloscope ----
+  const scope = $(".scope"), sctx = scope && scope.getContext("2d");
+  let sW = 0, sH = 0;
+  const sizeScope = () => {
+    if (!scope) return;
+    const r = results.getBoundingClientRect(), dpr = Math.min(2, devicePixelRatio || 1);
+    sW = r.width; sH = r.height; scope.width = sW * dpr; scope.height = sH * dpr; sctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+  const drawScope = (t) => {
+    sctx.clearRect(0, 0, sW, sH);
+    sctx.strokeStyle = "rgba(255,253,242,.045)"; sctx.lineWidth = 1; sctx.beginPath();
+    for (let x = 0; x < sW; x += 64) { sctx.moveTo(x + 0.5, 0); sctx.lineTo(x + 0.5, sH); }
+    for (let y = 0; y < sH; y += 64) { sctx.moveTo(0, y + 0.5); sctx.lineTo(sW, y + 0.5); }
+    sctx.stroke();
+    const traces = [
+      { a: 34, f: 0.006, s: 0.0016, y: 0.3, c: "rgba(255,253,242,.16)", w: 1.2 },
+      { a: 22, f: 0.011, s: -0.0022, y: 0.55, c: "rgba(167,164,198,.35)", w: 1.6 },
+      { a: 48, f: 0.0035, s: 0.0011, y: 0.8, c: "rgba(255,253,242,.1)", w: 1 },
+    ];
+    const kick = clamp(Math.abs(vel) * 0.9, 0, 40);
+    for (const tr of traces) {
+      sctx.strokeStyle = tr.c; sctx.lineWidth = tr.w; sctx.beginPath();
+      for (let x = 0; x <= sW; x += 6) {
+        const y = sH * tr.y + Math.sin(x * tr.f + t * tr.s) * (tr.a + kick) + Math.sin(x * tr.f * 3.1 + t * tr.s * 1.7) * tr.a * 0.25;
+        x ? sctx.lineTo(x, y) : sctx.moveTo(x, y);
+      }
+      sctx.stroke();
+    }
+  };
+
+  const onResize = () => { sizeField(); sizeScope(); placeInd(); };
+  addEventListener("resize", onResize);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(onResize);
+  setTimeout(onResize, 300);
+  onResize();
+
+  // ---- badge spring ----
+  let ang = 0, angV = 0;
+
+  // ---- main loop ----
+  const loop = (t) => {
+    const y = sy, dy = y - lastY; lastY = y;
+    vel = lerp(vel, dy, 0.2); if (Math.abs(dy) > 0.5) dir = Math.sign(dy);
+    const vh = innerHeight, docH = document.documentElement.scrollHeight - vh;
+
+    if (progress) progress.style.transform = `scaleX(${docH > 0 ? y / docH : 0})`;
+    if (nav) { if (dy > 2 && y > 320) nav.classList.add("hide"); else if (dy < -2 || y < 320) nav.classList.remove("hide"); }
+
+
+    // hero
+    if (vis.get(hero)) {
+      const nx = mx > -1000 ? mx / innerWidth - 0.5 : 0, ny = my > -1000 ? my / vh - 0.5 : 0;
+      if (ghost) ghost.style.translate = `${nx * -40}px ${y * 0.35 + ny * -16}px`;
+      if (portrait) portrait.style.translate = `${nx * 16}px ${y * -0.08}px`;
+      if (field) drawField(t);
+    }
+
+    // marquee speed and skew follow the scroll
+    if (vis.get(mqWrap)) {
+      const rate = (1 + Math.min(Math.abs(vel) * 0.18, 7)) * dir;
+      anims.forEach((a) => (a.playbackRate = rate));
+      const sk = clamp(-vel * 0.35, -9, 9).toFixed(2) + "deg";
+      mqRows.forEach((r) => r.style.setProperty("--sk", sk));
+    }
+
+    // results band opens up as it arrives
+    if (results) {
+      const r = results.getBoundingClientRect();
+      const p = clamp((vh - r.top) / (vh * 0.75), 0, 1), e = 1 - Math.pow(1 - p, 3);
+      results.style.setProperty("--ci", ((1 - e) * Math.min(innerWidth * 0.06, 80)).toFixed(1) + "px");
+      results.style.setProperty("--cr", ((1 - e) * 52).toFixed(1) + "px");
+      if (vis.get(results) && scope) drawScope(t);
+    }
+
+    // timeline rail
+    if (steps) {
+      const r = steps.getBoundingClientRect();
+      steps.style.setProperty("--p", clamp((vh * 0.55 - r.top) / r.height, 0, 1).toFixed(4));
+    }
+
+    // badge swings toward the pointer and gets kicked by scrolling
+    if (sw && vis.get(badge)) {
+      const r = badge.getBoundingClientRect();
+      const dx = mx - (r.left + r.width / 2), dyp = my - (r.top + 80), dist = Math.hypot(dx, dyp);
+      const pull = mx > -1000 ? clamp(dx / 16, -16, 16) * clamp(1 - dist / 520, 0, 1) : 0;
+      const target = pull + Math.sin(t / 1300) * 1.6;
+      angV = (angV + (target - ang) * 0.025 - clamp(vel, -40, 40) * 0.012) * 0.93; ang = clamp(ang + angV, -12, 12);
+      sw.style.transform = `rotate(${ang.toFixed(2)}deg)`;
+    }
+
+    requestAnimationFrame(loop);
+  };
+  requestAnimationFrame(loop);
+  window.__fxReady = true;
+})();
+</script>
+
+</body></html>
