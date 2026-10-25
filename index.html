@@ -141,10 +141,13 @@ h2{font-size:clamp(2.4rem,6vw,4.6rem)}
 .figure.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .figure.photo.wide{align-self:center;aspect-ratio:857/708;min-height:0}
 .figure.photo.wide img{object-position:40% 60%}
+.figure.photo.tl img{object-position:50% 30%}
 .inner:has(.wide){grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
 .figure.photo span{position:absolute;left:12px;bottom:12px;margin:0;padding:5px 10px;border-radius:999px;background:var(--card);color:var(--ink)}
 .figure.grid4{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0;background:none;align-self:center;min-height:0}
 .figure.grid4 img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:12px}
+.figure.gallery{align-self:start}
+.figure.gallery img.w{grid-column:span 2;aspect-ratio:16/9}
 .proof{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .proof span{font-size:.82rem;font-family:var(--cabin);font-weight:600;letter-spacing:.01em;text-transform:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
 
@@ -342,6 +345,10 @@ html,body{overflow-x:clip}
 .panel.open .figure.grid4 img:nth-child(2){transition-delay:.35s}
 .panel.open .figure.grid4 img:nth-child(3){transition-delay:.45s}
 .panel.open .figure.grid4 img:nth-child(4){transition-delay:.55s}
+.panel.open .figure.grid4 img:nth-child(5){transition-delay:.65s}
+.panel.open .figure.grid4 img:nth-child(6){transition-delay:.75s}
+.panel.open .figure.grid4 img:nth-child(7){transition-delay:.85s}
+.panel.open .figure.grid4 img:nth-child(8){transition-delay:.95s}
 .figure b{display:inline-block;transform:translateY(40%);opacity:0;transition:transform .9s var(--ease) .3s,opacity .6s .3s}
 .panel.open .figure b{transform:none;opacity:1}
 .spine{transition:opacity .3s,letter-spacing .4s var(--ease)}
@@ -532,7 +539,7 @@ html,body{overflow-x:clip}
           </ul>
           <div class="chips"><span>FactoryTalk SCADA</span><span>CompactLogix</span><span>EtherNet/IP</span><span>HART</span><span>13 functions</span></div>
         </div>
-        <div class="figure"><b>80%</b><span>Fewer manual touches</span></div>
+        <div class="figure photo tl"><img src="assets/touchless.webp" alt="Rayan beside the start button at the launch of the touchless production pilot, with control dashboards overlaid" loading="lazy"><span>Pilot launch</span></div>
       </div>
     </article>
     <article class="panel" tabindex="0">
@@ -606,7 +613,7 @@ html,body{overflow-x:clip}
           </ul>
           <div class="chips"><span>SolidWorks</span><span>ANSYS Fluent</span><span>EES</span></div>
         </div>
-        <div class="figure photo"><img src="assets/awg.webp" alt="The water generator in its clear acrylic case, with the evaporator coil on top and the compressor below" loading="lazy"><span>Final build in its acrylic case</span></div>
+        <div class="figure photo"><img src="assets/awg.webp" alt="The water generator in its clear acrylic case on a lab bench, with the evaporator coil and fan on top and the compressor below" loading="lazy" style="object-position:58% 55%"><span>Final build in its acrylic case</span></div>
       </div>
     </article>
     <article class="panel" tabindex="0">
@@ -622,9 +629,10 @@ html,body{overflow-x:clip}
             <li>Raspberry Pi vlog camera with its own touchscreen interface</li>
             <li>Self hosted agent routing Telegram requests to Google Calendar and Docs</li>
             <li>Daily GitHub Actions pipeline that pulls two APIs and pushes results to Telegram</li>
+            <li>Round desk display showing the time, weather and daily prayer times</li>
           </ul>
         </div>
-        <div class="figure"><b>5</b><span>Side builds in Python, Pi and ESP32</span></div>
+        <div class="figure grid4 gallery"><img src="assets/sb-breadboard.webp" alt="Breadboard driver circuit running two peristaltic pumps" title="Breadboard driver circuit running two peristaltic pumps" loading="lazy" class="w"><img src="assets/sb-feather.webp" alt="ESP32 S3 Feather with TFT display running a demo" title="ESP32 S3 Feather with TFT display running a demo" loading="lazy"><img src="assets/sb-dock.webp" alt="3D printed single pump dock holding a peristaltic pump and a vial" title="3D printed single pump dock holding a peristaltic pump and a vial" loading="lazy"><img src="assets/sb-pcb-cad.webp" alt="Custom PCB layout in Fusion 360, marked Designed by Rayan" title="Custom PCB layout in Fusion 360, marked Designed by Rayan" loading="lazy" class="w"><img src="assets/sb-pcb.webp" alt="The manufactured PCB, marked Designed by Rayan" title="The manufactured PCB, marked Designed by Rayan" loading="lazy"><img src="assets/sb-battery.webp" alt="Dual 18650 battery power board for portable builds" title="Dual 18650 battery power board for portable builds" loading="lazy"><img src="assets/sb-vlogcam.webp" alt="Raspberry Pi vlog camera app with record and snapshot buttons" title="Raspberry Pi vlog camera app with record and snapshot buttons" loading="lazy"><img src="assets/sb-clock.webp" alt="Round desk display showing the time, weather and daily prayer times" title="Round desk display showing the time, weather and daily prayer times" loading="lazy"></div>
       </div>
     </article>
   </div>
