@@ -1,0 +1,27 @@
+# Rayan Shahzad
+
+> Process and hardware engineer. Mechanical engineer (UET Lahore) completing an MSc in Technology, Innovation and Entrepreneurship at KAUST on a full fellowship. Builds complete physical systems and measures them: factory automation, custom PCBs, embedded firmware and rapid prototypes.
+
+## Experience
+- Cofounder and CTO, Elexint (KAUST affiliated hardware venture, Dec 2025 to present): eight channel gravimetric fragrance dispenser with custom PCB and closed loop firmware.
+- Technical Fellow, Innox Academy, Shenzhen (Jul to Oct 2026): 10 working prototypes and 4 custom PCBs of AI enabled consumer hardware.
+- Process Lead, Operations, British American Tobacco Pakistan (Dec 2023 to Jul 2025): Project Process Lead on the first touchless production pilot (80% fewer manual touches); led a team of 40+ at over 85% OEE; estimated £3M in cost savings.
+- Management Trainee Officer, Ingredion (Oct to Dec 2023): cut downtime by up to 30% across 20+ plant sections.
+- Supply Chain Engineering Intern, Nestlé (Jun to Aug 2022).
+
+## Education
+- MSc Technology, Innovation and Entrepreneurship, KAUST (Aug 2025 to Dec 2026), CGPA 3.92 / 4.00.
+- BSc Mechanical Engineering, UET Lahore (2019 to 2023), CGPA 3.78 / 4.00, Dean's Honor Roll for 6 semesters.
+
+## Honors
+- Flagship IBPC KAUST Winner 2026
+- IWS Level 4, Loss Elimination Pillar Lead
+- Author of the novel The Tangerine Dusk
+
+## Skills
+Process engineering, OEE, Lean, value stream mapping, root cause analysis, SCADA, PLC integration, PID control, industrial networks, CAD (SolidWorks, Fusion 360), PCB design, embedded firmware (ESP32, Raspberry Pi), FEA and CFD (ANSYS), Python.
+
+## Links
+- Website: https://rayanshahzad.github.io/
+- LinkedIn: https://www.linkedin.com/in/rayanshahzad
+- Author page: https://amazon.com/author/rayanshahzad
