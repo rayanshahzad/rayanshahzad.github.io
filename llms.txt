@@ -1,11 +1,11 @@
 # Rayan Shahzad
 
-> Process and hardware engineer. Mechanical engineer (UET Lahore) completing an MSc in Technology, Innovation and Entrepreneurship at KAUST on a full fellowship. Builds complete physical systems and measures them: factory automation, custom PCBs, embedded firmware and rapid prototypes.
+> Process and hardware engineer. Mechanical engineer (UET Lahore) with an MSc in Technology, Innovation and Entrepreneurship from KAUST (class of 2026) on a full fellowship. Builds complete physical systems and measures them: factory automation, custom PCBs, embedded firmware and rapid prototypes.
 
 ## Experience
 - Cofounder and CTO, Elexint (KAUST affiliated hardware venture, Dec 2025 to present): eight channel gravimetric fragrance dispenser with custom PCB and closed loop firmware.
-- Technical Fellow, Innox Academy, Shenzhen (Jul to Oct 2026): 10 working prototypes and 4 custom PCBs of AI enabled consumer hardware.
-- Process Lead, Operations, British American Tobacco Pakistan (Dec 2023 to Jul 2025): Project Process Lead on the first touchless production pilot (80% fewer manual touches); led a team of 40+ at over 85% OEE; estimated £3M in cost savings.
+- Technical Fellow, Innox Academy, Shenzhen (Jul to Oct 2026): 10 working prototypes and 4 custom PCBs of AI enabled consumer hardware, across multiple IoT projects that improve operational performance for companies in China.
+- Assistant Cell Manager, British American Tobacco Pakistan (Dec 2023 to Jul 2025): Project Process Lead on the first touchless production pilot (80% fewer manual touches); led a team of 40+ at over 85% OEE; estimated £3M in cost savings.
 - Management Trainee Officer, Ingredion (Oct to Dec 2023): cut downtime by up to 30% across 20+ plant sections.
 - Supply Chain Engineering Intern, Nestlé (Jun to Aug 2022).
 
@@ -23,5 +23,7 @@ Process engineering, OEE, Lean, value stream mapping, root cause analysis, SCADA
 
 ## Links
 - Website: https://rayanshahzad.github.io/
+- CV (PDF): https://rayanshahzad.github.io/assets/Rayan_Shahzad_CV.pdf
 - LinkedIn: https://www.linkedin.com/in/rayanshahzad
+- GitHub: https://github.com/rayanshahzad
 - Author page: https://amazon.com/author/rayanshahzad

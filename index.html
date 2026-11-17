@@ -90,7 +90,7 @@ main:focus{outline:none}
   background:radial-gradient(closest-side,rgba(27,29,58,.22),transparent);}
 .portrait.half::before{display:none}
 .portrait.half img{height:clamp(380px,40vw,580px)}
-@media (min-width:901px){.hero-grid:has(.half){grid-template-columns:minmax(0,1.2fr) auto minmax(0,.8fr)}}
+@media (min-width:901px){.hero-grid:has(.half){grid-template-columns:minmax(0,1fr) auto;column-gap:clamp(24px,6vw,96px);align-items:center}.hero-grid .hero-cta{justify-content:flex-start;margin-top:26px}}
 .portrait.half img{-webkit-mask-image:linear-gradient(#000 80%,transparent 99%);mask-image:linear-gradient(#000 80%,transparent 99%)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
 .rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
@@ -201,16 +201,28 @@ main:focus{outline:none}
 .rows li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 18px;border-bottom:1px solid var(--line);transition:background .25s,color .25s,padding .25s}
 .rows li:hover{background:var(--ink);color:var(--card);padding-left:26px}
 .rows strong{font-weight:600}
+.rows a{color:inherit;text-underline-offset:3px}
 .rows span{font-size:.8rem;font-family:var(--cabin);font-weight:600;letter-spacing:.01em;text-transform:none;opacity:.65;white-space:nowrap}
 
 /* numbers */
 .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:40px}
+@media (min-width:901px){.nums{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .num{padding:26px;border-radius:22px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;gap:18px;transition:transform .3s}
 .num:hover{transform:translateY(-6px)}
 .num b{font-size:clamp(2.8rem,5vw,4rem);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
 .num b i{font-style:normal;color:var(--f3)}
 .num strong{display:block}
 .num p{margin:4px 0 0;font-size:.86rem;color:var(--ink-soft)}
+
+/* recommendations */
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:40px}
+.q{margin:0;padding:26px;border-radius:22px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.q blockquote{margin:0;font-size:1.05rem;font-weight:500;line-height:1.45;letter-spacing:-.01em}
+.q figcaption{font-size:.86rem;color:var(--ink-soft)}
+.q figcaption strong{display:block;font-size:.95rem;color:var(--ink)}
+.q figcaption small{display:block;margin-top:8px;font:600 .76rem var(--cabin);letter-spacing:.01em}
+.quotes-more{margin:22px 0 0}
+@media (max-width:900px){.quotes{grid-template-columns:1fr}}
 
 /* contact */
 .contact{text-align:left}
@@ -479,15 +491,15 @@ html,body{overflow-x:clip}
   <div class="wrap hero-grid">
     <div>
       <h1><span class="eyebrow fx" style="--d:.1s">Rayan Shahzad · Mechanical engineer</span> <span class="ln"><span style="--i:0">Process &amp;</span></span> <span class="ln"><span style="--i:1">Hardware</span></span> <span class="ln"><span style="--i:2">Engineer<i>.</i></span></span></h1>
-      <p class="hero-sub fx" style="--d:.65s">I build the whole system, then I measure it. Process entrepreneur, automation geek and MSc candidate at KAUST.</p>
-      <div class="proof"><span style="--d:.85s">MSc KAUST · 3.92 GPA</span><span style="--d:.95s">Ex BAT · Ingredion · Nestlé</span><span style="--d:1.05s">Graduating Dec 2026</span></div>
+      <p class="hero-sub fx" style="--d:.65s">I build the whole system, then I measure it. Process entrepreneur, automation geek and KAUST MSc, class of 2026.</p>
+      <div class="hero-cta rise d2">
+        <a class="btn solid" href="assets/Rayan_Shahzad_CV.pdf" download data-goatcounter-click="cv">Download CV ↓</a>
+        <a class="btn" href="#contact">Let's talk</a>
+        <a class="btn" href="https://www.linkedin.com/in/rayanshahzad" data-goatcounter-click="linkedin" target="_blank" rel="noopener">LinkedIn ↗︎</a>
+      </div>
+      <div class="proof"><span style="--d:.85s">MSc KAUST 2026 · 3.92 GPA</span><span style="--d:.95s">Ex BAT · Ingredion · Nestlé</span><span style="--d:1.05s">IBPC Winner 2026</span></div>
     </div>
     <div class="portrait half"><img src="assets/rayan-full.webp" width="900" height="1649" alt="Rayan Shahzad in a navy checked blazer and light blue shirt"><span class="scan" aria-hidden="true"></span></div>
-    <div class="hero-cta rise d2">
-      <a class="btn solid" href="#work">Explore work →</a>
-      <a class="btn" href="#contact">Let's talk</a>
-      <a class="btn" href="https://www.linkedin.com/in/rayanshahzad" data-goatcounter-click="linkedin" target="_blank" rel="noopener">LinkedIn ↗︎</a>
-    </div>
   </div>
 </div>
 
@@ -500,8 +512,8 @@ html,body{overflow-x:clip}
   <div>
     <p class="eyebrow">About</p>
     <h2>Hi, I'm <em>Rayan.</em></h2>
-    <p>Mechanical engineer from UET Lahore, finishing an MSc at KAUST in December 2026. I design and build electromechanical systems end to end: the mechanical and fluidic hardware, custom PCBs, embedded firmware and the software around them.</p>
-    <p class="more">Before KAUST I spent two years improving production at British American Tobacco and Ingredion, where every change was judged by measured OEE, waste and cost. I bring that habit to everything I build: make the rig, instrument it and test it against numbers. I also wrote a novel, The Tangerine Dusk.</p>
+    <p>Mechanical engineer from UET Lahore and KAUST MSc, class of 2026. I design and build electromechanical systems end to end: the mechanical and fluidic hardware, custom PCBs, embedded firmware and the software around them.</p>
+    <p class="more">Before KAUST I improved production at British American Tobacco and Ingredion, where every change was judged by measured OEE, waste and cost. I bring that habit to everything I build: make the rig, instrument it and test it against numbers. I also wrote a novel, The Tangerine Dusk.</p>
     <div class="links">
       <a class="btn solid" href="https://www.linkedin.com/in/rayanshahzad" data-goatcounter-click="linkedin" target="_blank" rel="noopener">LinkedIn ↗︎</a>
       <a class="btn" href="https://amazon.com/author/rayanshahzad" data-goatcounter-click="amazon-author" target="_blank" rel="noopener">Author page ↗︎</a>
@@ -543,7 +555,7 @@ html,body{overflow-x:clip}
     <p class="eyebrow">Quick facts</p>
     <dl class="facts">
       <div><dt>Based in</dt><dd>KAUST, Saudi Arabia</dd></div>
-      <div><dt>Studying</dt><dd>MSc TIE, KAUST · 3.92</dd></div>
+      <div><dt>Masters</dt><dd>MSc TIE, KAUST 2026 · 3.92</dd></div>
       <div><dt>Engineering</dt><dd>BSc Mechanical, UET · 3.78</dd></div>
       <div><dt>Building</dt><dd>Elexint, as CTO</dd></div>
       <div><dt>Previously</dt><dd>BAT · Ingredion · Nestlé</dd></div>
@@ -558,16 +570,14 @@ html,body{overflow-x:clip}
   <div class="wrap">
   <p class="eyebrow">Results</p>
   <h2>Numbers I can <em>stand behind.</em></h2>
-  <p class="lede">From factory floors to labs, startups and competition stages. Every figure is one I can explain in detail.</p>
+  <p class="lede">Plant results first, then hardware. Every figure is one I can explain in detail.</p>
   <div class="nums">
     <div class="num"><small class="src">BAT</small><b><span class="cnt" data-to="80">80</span><i>%</i></b><div><strong>Fewer manual touches</strong><p>In BAT Pakistan's first touchless production pilot, where I was Project Process Lead.</p></div></div>
-    <div class="num"><small class="src">Innox Academy</small><b><span class="cnt" data-to="10">10</span></b><div><strong>Working prototypes</strong><p>And 4 custom PCBs in four months as a Technical Fellow in Shenzhen.</p></div></div>
-    <div class="num"><small class="src">Ingredion</small><b><span class="cnt" data-to="30">30</span><i>%</i></b><div><strong>Less downtime</strong><p>After streamlining permit flow across 20+ plant sections.</p></div></div>
-    <div class="num"><small class="src">Elexint</small><b><span class="cnt" data-to="130">130</span><i>+</i></b><div><strong>Pilot users</strong><p>Tried the Elexint dispenser at workshops. 200 dispense cycles logged.</p></div></div>
     <div class="num"><small class="src">BAT</small><b>£<span class="cnt" data-to="3">3</span>M</b><div><strong>Estimated cost savings</strong><p>From KPI, OEE and value stream work at the Jhelum factory.</p></div></div>
+    <div class="num"><small class="src">Ingredion</small><b><span class="cnt" data-to="30">30</span><i>%</i></b><div><strong>Less downtime</strong><p>After streamlining permit flow across 20+ plant sections.</p></div></div>
+    <div class="num"><small class="src">Innox Academy</small><b><span class="cnt" data-to="10">10</span></b><div><strong>Working prototypes</strong><p>And 4 custom PCBs in four months as a Technical Fellow in Shenzhen.</p></div></div>
+    <div class="num"><small class="src">Elexint</small><b><span class="cnt" data-to="130">130</span><i>+</i></b><div><strong>Pilot users</strong><p>Tried the Elexint dispenser at workshops. 200 dispense cycles logged.</p></div></div>
     <div class="num"><small class="src">KAUST</small><b><span class="cnt" data-to="1">1</span><i>st</i></b><div><strong>Flagship IBPC winner</strong><p>Won KAUST's flagship International Business Plan Competition in 2026.</p></div></div>
-    <div class="num"><small class="src">UET Lahore</small><b><span class="cnt" data-to="6">6</span></b><div><strong>Semesters on the Dean's Honor Roll</strong><p>During my BSc in Mechanical Engineering at UET Lahore.</p></div></div>
-    <div class="num"><small class="src">KAUST</small><b><span class="cnt" data-to="100">100</span><i>%</i></b><div><strong>Funded fellowship</strong><p>Full KAUST fellowship for the MSc in Technology, Innovation and Entrepreneurship.</p></div></div>
   </div>
 </div></section>
 
@@ -629,7 +639,7 @@ html,body{overflow-x:clip}
         <div>
           <p class="eyebrow">Consumer hardware · Innox Academy, Shenzhen</p>
           <h3>Ten prototypes in four months</h3>
-          <p>Technical Fellow building AI enabled consumer hardware from breadboard to PCB to enclosure, working with design and manufacturing partners in Shenzhen.</p>
+          <p>Technical Fellow on multiple IoT projects built to improve operational performance for companies in China. I took AI enabled hardware from breadboard to PCB to enclosure with design and manufacturing partners in Shenzhen.</p>
           <ul>
             <li>On device mood inference that personalizes product output in real time</li>
             <li>Full stack per device: firmware, Flask servers, web and mobile apps</li>
@@ -672,7 +682,8 @@ html,body{overflow-x:clip}
           <ul>
             <li>R134a hermetic compressor, capillary expansion and a finned evaporator coil</li>
             <li>Instrumented with a thermocouple, anemometer and hygrograph</li>
-            <li>Two 12 hour outdoor runs in Lahore at 66 W input</li>
+            <li>Two 12 hour outdoor runs in Lahore</li>
+            <li>22 litres of water collected per day in June 2022</li>
           </ul>
           <div class="chips"><span>SolidWorks</span><span>ANSYS Fluent</span><span>EES</span></div>
         </div>
@@ -704,20 +715,20 @@ html,body{overflow-x:clip}
 <section id="path"><div class="wrap">
   <p class="eyebrow">Experience</p>
   <h2>Education &amp; <em>experience.</em></h2>
-  <p class="lede">From Lahore to Jhelum to KAUST to Shenzhen. One path, scroll to follow it.</p>
+  <p class="lede">Newest first: Shenzhen, KAUST, Jhelum and Lahore. Scroll to follow the path back.</p>
   <div class="path">
     <div class="steps" id="steps">
-      <div class="step" data-year="2019"><span class="org l3" aria-hidden="true">UET</span><span class="when">2019 to 2023</span><small>Education</small><h3>BSc Hons Mechanical Engineering</h3><p>University of Engineering and Technology, Lahore · CGPA 3.78 / 4.00 · Dean's Honor Roll</p></div>
-      <div class="step" data-year="2022"><span class="org" aria-hidden="true">AS</span><span class="when">Apr 2022 to May 2023</span><small>Leadership</small><h3>General Secretary, ASHRAE</h3><p>Lahore · Ran large public events and secured sponsorships, after three years as Media Director.</p></div>
-      <div class="step" data-year="2022"><span class="org" aria-hidden="true">N</span><span class="when">Jun to Aug 2022</span><small>Internship</small><h3>Supply Chain Engineering Intern, Nestlé</h3><p>Lahore · Automated vendor notifications for ledgers and invoices. One of 0.5% accepted from 17,000 applicants.</p></div>
-      <div class="step" data-year="2023"><span class="org l3" aria-hidden="true">BAT</span><span class="when">Jul to Aug 2023</span><small>Internship</small><h3>Operations Engineer, BAT</h3><p>Three sales projects on recovery discrepancies, reverse route planning and premium brands.</p></div>
-      <div class="step" data-year="2023"><span class="org" aria-hidden="true">IN</span><span class="when">Oct to Dec 2023</span><small>Experience</small><h3>Management Trainee Officer, Ingredion</h3><p>Rafhan Maize Products, Faisalabad · Streamlined permit flow across 20+ plant sections, cutting downtime by up to 30%.</p></div>
-      <div class="step" data-year="2023"><span class="org l3" aria-hidden="true">BAT</span><span class="when">Dec 2023 to Jul 2025</span><small>Experience</small><h3>Process Lead, Operations, BAT</h3><p>Primary manufacturing, Jhelum · Project Process Lead on the touchless pilot. Held OEE above 85% with a team of 40+ and delivered an estimated £3M in savings.</p></div>
-      <div class="step" data-year="2025"><span class="org" aria-hidden="true">K</span><span class="when">Aug 2025 to Dec 2026</span><small>Education</small><h3>MSc Technology, Innovation and Entrepreneurship</h3><p>King Abdullah University of Science and Technology (KAUST) · CGPA 3.92 / 4.00 · Full fellowship</p></div>
-      <div class="step" data-year="2025"><span class="org" aria-hidden="true">EL</span><span class="when">Dec 2025 to now</span><small>Founder</small><h3>Cofounder and CTO, Elexint</h3><p>KAUST affiliated hardware venture · PCB design, firmware and every machine build.</p></div>
       <div class="step" data-year="2026"><span class="org" aria-hidden="true">IX</span><span class="when">Jul to Oct 2026</span><small>Experience</small><h3>Technical Fellow, Innox Academy</h3><p>Shenzhen · Rapid prototyping and mechatronics: 10 prototypes and 4 custom PCBs.</p></div>
+      <div class="step" data-year="2025"><span class="org" aria-hidden="true">EL</span><span class="when">Dec 2025 to now</span><small>Founder</small><h3>Cofounder and CTO, Elexint</h3><p>KAUST affiliated hardware venture · PCB design, firmware and every machine build.</p></div>
+      <div class="step" data-year="2025"><span class="org" aria-hidden="true">K</span><span class="when">Aug 2025 to Dec 2026</span><small>Education</small><h3>MSc Technology, Innovation and Entrepreneurship</h3><p>King Abdullah University of Science and Technology (KAUST) · CGPA 3.92 / 4.00 · Full fellowship</p></div>
+      <div class="step" data-year="2023"><span class="org l3" aria-hidden="true">BAT</span><span class="when">Dec 2023 to Jul 2025</span><small>Experience</small><h3>Assistant Cell Manager, BAT</h3><p>Primary manufacturing, Jhelum · Project Process Lead on the touchless pilot. Held OEE above 85% with a team of 40+ and delivered an estimated £3M in savings.</p></div>
+      <div class="step" data-year="2023"><span class="org" aria-hidden="true">IN</span><span class="when">Oct to Dec 2023</span><small>Experience</small><h3>Management Trainee Officer, Ingredion</h3><p>Rafhan Maize Products, Faisalabad · Streamlined permit flow across 20+ plant sections, cutting downtime by up to 30%.</p></div>
+      <div class="step" data-year="2023"><span class="org l3" aria-hidden="true">BAT</span><span class="when">Jul to Aug 2023</span><small>Internship</small><h3>Operations Engineer, BAT</h3><p>Three sales projects on recovery discrepancies, reverse route planning and premium brands.</p></div>
+      <div class="step" data-year="2022"><span class="org" aria-hidden="true">N</span><span class="when">Jun to Aug 2022</span><small>Internship</small><h3>Supply Chain Engineering Intern, Nestlé</h3><p>Lahore · Automated vendor notifications for ledgers and invoices. One of 0.5% accepted from 17,000 applicants.</p></div>
+      <div class="step" data-year="2022"><span class="org" aria-hidden="true">AS</span><span class="when">Apr 2022 to May 2023</span><small>Leadership</small><h3>General Secretary, ASHRAE</h3><p>Lahore · Ran large public events and secured sponsorships, after three years as Media Director.</p></div>
+      <div class="step" data-year="2019"><span class="org l3" aria-hidden="true">UET</span><span class="when">2019 to 2023</span><small>Education</small><h3>BSc Hons Mechanical Engineering</h3><p>University of Engineering and Technology, Lahore · CGPA 3.78 / 4.00 · Dean's Honor Roll</p></div>
     </div>
-    <div class="year" id="year" aria-hidden="true">2019</div>
+    <div class="year" id="year" aria-hidden="true">2026</div>
   </div>
 </div></section>
 
@@ -728,17 +739,27 @@ html,body{overflow-x:clip}
     <p class="lede">Fellowships, awards, competition finals and certifications.</p>
   </div>
   <ul class="rows">
+    <li><strong><a href="https://ais.hkust.edu.hk/whats-happening/news/energy-sustainability-tm-international-business-plan-competition-saudi-arabia" data-goatcounter-click="ibpc" target="_blank" rel="noopener">Flagship IBPC KAUST Winner 2026 ↗︎</a></strong><span>Competition</span></li>
     <li><strong>KAUST full fellowship</strong><span>Fellowship</span></li>
     <li><strong>IWS Level 4, Loss Elimination Pillar Lead</strong><span>Certification</span></li>
+    <li><strong>Dean's Honor Roll for 6 semesters, UET Lahore</strong><span>Honor</span></li>
     <li><strong>LEAP 2026, Elexint prototype on show</strong><span>Exhibition</span></li>
-    <li><strong>Dean's Honor Roll, UET Lahore</strong><span>Honor</span></li>
-    <li><strong>SUSI 2022 Cohort Finalist</strong><span>Honor</span></li>
     <li><strong>Hult Prize National Finalist</strong><span>Competition</span></li>
-    <li><strong>Flagship IBPC KAUST Winner 2026</strong><span>Competition</span></li>
+    <li><strong>SUSI 2022 Cohort Finalist</strong><span>Honor</span></li>
     <li><strong>Best Deputy Director 2020, ASHRAE</strong><span>Honor</span></li>
-    <li><strong>Machine Design Part I</strong><span>Certificate</span></li>
-    <li><strong>Interfacing with the Arduino</strong><span>Certificate</span></li>
   </ul>
+</div></section>
+
+<section id="praise" class="praise"><div class="wrap">
+  <p class="eyebrow">Recommendations</p>
+  <h2>In their <em>words.</em></h2>
+  <p class="lede">From people who managed me and worked beside me, quoted word for word from LinkedIn.</p>
+  <div class="quotes">
+    <figure class="q"><blockquote>"Rayan was always reliable and professional. What's more, Rayan's positive attitude towards work helped encourage and support all of us, which made for a very enjoyable but productive work environment."</blockquote><figcaption><strong>Usama Mukhtar Awan</strong>MEP Engineer, Larsen &amp; Toubro<small>Managed Rayan directly at ASHRAE</small></figcaption></figure>
+    <figure class="q"><blockquote>"Rayan is a young, energetic and enthusiastic guy. He is a quick learner &amp; able to demonstrate his knowledge."</blockquote><figcaption><strong>Farman Ullah, CSP</strong>HSE Manager<small>Worked with Rayan on the same team</small></figcaption></figure>
+    <figure class="q"><blockquote>"He is amongst the very few people I met whose lives are driven more strongly by curiosity than by fear."</blockquote><figcaption><strong>Wasib Muzammil</strong>Maintenance Engineer, Fatima Group<small>Senior to Rayan at ASHRAE UET Lahore</small></figcaption></figure>
+  </div>
+  <p class="quotes-more"><a class="btn" href="https://www.linkedin.com/in/rayanshahzad/details/recommendations/" data-goatcounter-click="linkedin-recommendations" target="_blank" rel="noopener">All seven on LinkedIn ↗︎</a></p>
 </div></section>
 
 <section id="contact" class="contact"><div class="wrap">
@@ -749,12 +770,13 @@ html,body{overflow-x:clip}
     <a id="email" class="addr" data-goatcounter-click="email" href="mailto:rayan.shahzad81@gmail.com">rayan.shahzad81@gmail.com</a>
     <button class="btn" id="copy" type="button" data-goatcounter-click="copy-email">Copy email</button>
     <a class="btn solid" href="https://www.linkedin.com/in/rayanshahzad" data-goatcounter-click="linkedin" target="_blank" rel="noopener">LinkedIn ↗︎</a>
-    <a class="btn" href="https://amazon.com/author/rayanshahzad" data-goatcounter-click="amazon-author" target="_blank" rel="noopener">Amazon author page ↗︎</a>
+    <a class="btn" href="assets/Rayan_Shahzad_CV.pdf" download data-goatcounter-click="cv">Download CV ↓</a>
+    <a class="btn" href="https://github.com/rayanshahzad" data-goatcounter-click="github" target="_blank" rel="noopener">GitHub ↗︎</a>
   </div>
 </div></section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Rayan Shahzad</span><span class="foot-links"><a href="https://www.linkedin.com/in/rayanshahzad" data-goatcounter-click="linkedin" target="_blank" rel="noopener">LinkedIn</a><a href="https://amazon.com/author/rayanshahzad" data-goatcounter-click="amazon-author" target="_blank" rel="noopener">Amazon</a><span>KAUST, Saudi Arabia</span></span></div></footer>
+<footer><div class="wrap"><span>© 2026 Rayan Shahzad</span><span class="foot-links"><a href="https://www.linkedin.com/in/rayanshahzad" data-goatcounter-click="linkedin" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/rayanshahzad" data-goatcounter-click="github" target="_blank" rel="noopener">GitHub</a><a href="https://amazon.com/author/rayanshahzad" data-goatcounter-click="amazon-author" target="_blank" rel="noopener">Amazon</a><span>KAUST, Saudi Arabia</span></span></div></footer>
 
 <script>
 // ---- Skills: edit this list to add or remove tiles ----
@@ -893,7 +915,7 @@ $("#copy").addEventListener("click",async e=>{
     }
     String(y).padStart(4, "0").split("").forEach((c, i) => yearEl.children[i].firstChild.style.setProperty("--n", c));
   };
-  setYear(yearEl ? yearEl.textContent.trim() || "2019" : "2019");
+  setYear(yearEl ? yearEl.textContent.trim() || "2026" : "2026");
 
   if (reduce || !root.classList.contains("js-fx")) { root.classList.remove("js-fx"); window.__fxReady = true; return; }
 
@@ -927,7 +949,7 @@ $("#copy").addEventListener("click",async e=>{
   $$("section h2").forEach((h) => split(h, !!h.closest(".contact")));
 
   // ---- reveal on scroll ----
-  const groups = [".nums .num", ".steps .step", ".rows li", ".facts > div"];
+  const groups = [".nums .num", ".steps .step", ".rows li", ".facts > div", ".quotes .q"];
   groups.forEach((g) => $$(g).forEach((el, i) => { el.classList.add("rv"); el.style.setProperty("--dl", (i % 8) * 80 + "ms"); }));
   $$(".lede, .links, .quote, .mail, .fams, #badge, .about > div:first-child > p").forEach((el) => el.classList.add("rv"));
   const table = $("#table");
