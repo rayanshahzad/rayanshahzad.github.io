@@ -209,7 +209,7 @@ h2{font-size:clamp(2.4rem,6vw,4.6rem)}
 .contact{text-align:left}
 .contact h2{font-size:clamp(3rem,9vw,7.5rem)}
 .mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:34px}
-.mail code{font:500 clamp(1rem,2.4vw,1.4rem) var(--mono);user-select:all;overflow-wrap:anywhere}
+.mail .addr{display:inline-flex;align-items:center;min-height:44px;font:500 clamp(1rem,2.4vw,1.4rem) var(--mono);color:inherit;text-decoration:none;overflow-wrap:anywhere}
 footer{border-top:1px solid var(--line);padding-block:26px;font-size:.8rem;color:var(--ink-soft)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 .foot-links{display:flex;flex-wrap:wrap;gap:18px}
@@ -398,9 +398,9 @@ html,body{overflow-x:clip}
 .rows li>*{position:relative}
 
 /* contact */
-.mail code{position:relative}
-.mail code::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:0 50%;transition:transform .6s var(--ease)}
-.mail:hover code::after{transform:scaleX(1)}
+.mail .addr{position:relative}
+.mail .addr::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:0 50%;transition:transform .6s var(--ease)}
+.mail:hover .addr::after{transform:scaleX(1)}
 
 @media (max-width:900px){
   .hud{display:none}
@@ -709,7 +709,7 @@ html,body{overflow-x:clip}
   <h2>Let's build <em>something real.</em></h2>
   <p class="lede">I enjoy hard problems on production floors, in labs and inside hardware. If you are working on something in that space, I would love to hear about it.</p>
   <div class="mail">
-    <code id="email">rayan.shahzad81@gmail.com</code>
+    <a id="email" class="addr" href="mailto:rayan.shahzad81@gmail.com">rayan.shahzad81@gmail.com</a>
     <button class="btn" id="copy" type="button">Copy email</button>
     <a class="btn solid" href="https://www.linkedin.com/in/rayanshahzad" target="_blank" rel="noopener">LinkedIn ↗︎</a>
     <a class="btn" href="https://amazon.com/author/rayanshahzad" target="_blank" rel="noopener">Amazon author page ↗︎</a>
