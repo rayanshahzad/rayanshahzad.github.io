@@ -240,7 +240,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   .steps{border-right:0;padding-right:0}
   .step .when{float:none;display:block;margin-top:6px}
 }
+@media (max-width:900px){
+  .btn,.fam{min-height:44px}
+  .pills a{display:inline-flex;align-items:center;min-height:44px}
+  .mark{min-width:44px;min-height:44px}
+}
 @media (max-width:600px){
+  .pills a[href="#results"],.pills a[href="#skills"]{display:none}
+  .pills a{padding-inline:11px;font-size:.8rem}
+  .nav.hide{transform:none}
+  .nav .wrap{gap:10px}
   .hero-grid{gap:0}
   .hero-grid>div:first-child{display:contents}
   .portrait{order:-1;margin-bottom:12px}
