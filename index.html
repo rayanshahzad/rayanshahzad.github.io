@@ -154,13 +154,15 @@ main:focus{outline:none}
 .detail p{margin:10px 0 0;font-size:.88rem;color:var(--ink-soft)}
 
 /* work */
-.panels{display:flex;gap:12px;margin-top:40px;min-height:500px}
+.panels{display:flex;gap:12px;margin-top:40px;min-height:690px}
 .panel{flex:1 1 0;min-width:0;border-radius:22px;background:var(--card);border:1px solid var(--line);overflow:hidden;position:relative;cursor:pointer;transition:flex-grow .6s cubic-bezier(.2,.7,.2,1)}
 .panel.open{flex-grow:14;cursor:default}
-.spine{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.05rem;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;transition:opacity .3s}
+.spine{position:absolute;inset:0;width:100%;border:0;background:none;color:inherit;font-family:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.05rem;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;transition:opacity .3s}
 .panel.open .spine{opacity:0;pointer-events:none}
 .inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:28px;height:100%;padding:clamp(22px,3vw,40px);opacity:0;transition:opacity .35s;min-width:560px}
 .panel.open .inner{opacity:1;transition-delay:.25s}
+.panel:not(.open) .inner{visibility:hidden;pointer-events:none}
+@media (min-width:901px){.panel:not(.open) .inner{position:absolute;top:0;left:0;height:auto}}
 .inner h3{margin:0 0 12px;font-size:clamp(1.5rem,2.6vw,2.2rem);letter-spacing:-.03em;line-height:1.05}
 .inner p{margin:0;color:var(--ink-soft);font-size:.93rem;max-width:44ch}
 .inner ul{margin:16px 0 0;padding-left:18px;font-size:.86rem;display:grid;gap:5px}
@@ -181,6 +183,7 @@ main:focus{outline:none}
 .figure.grid4 img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:12px}
 .figure.gallery{align-self:start}
 .figure.gallery img.w{grid-column:span 2;aspect-ratio:16/9}
+@media (min-width:601px){.figure.gallery{grid-template-columns:repeat(3,1fr)}.figure.gallery img.w{grid-column:auto;aspect-ratio:1}}
 .proof{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .proof span{font-size:.82rem;font-family:var(--cabin);font-weight:600;letter-spacing:.01em;text-transform:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
 
@@ -207,6 +210,7 @@ main:focus{outline:none}
 /* numbers */
 .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:40px}
 @media (min-width:901px){.nums{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:600px){.nums{grid-template-columns:1fr 1fr;gap:10px}.num{padding:16px;gap:10px;border-radius:18px}.num b{font-size:2.3rem}.num strong{font-size:.92rem;line-height:1.25}.num p{font-size:.76rem}}
 .num{padding:26px;border-radius:22px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;gap:18px;transition:transform .3s}
 .num:hover{transform:translateY(-6px)}
 .num b{font-size:clamp(2.8rem,5vw,4rem);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
@@ -252,8 +256,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   .detail strong{margin-top:0}
   .detail p{margin:2px 0 0}
   .panels{flex-direction:column;min-height:0}
-  .panel,.panel.open{flex:none;cursor:default}
-  .spine{display:none}
+  .panel,.panel.open{flex:none;cursor:default;scroll-margin-top:84px}
+  .spine,.panel.open .spine{position:static;writing-mode:horizontal-tb;transform:none;opacity:1;justify-content:space-between;min-height:56px;padding:0 22px;font-size:1rem;text-align:left}
+  .spine::after{content:"+";font-size:1.4rem;font-weight:400}
+  .panel.open .spine::after{content:"\2212"}
+  .panel.open .spine{pointer-events:none;padding-bottom:0;min-height:48px}
+  .panel:not(.open) .inner{display:none}
   .inner{opacity:1;min-width:0;grid-template-columns:1fr}
   .figure{min-height:0}
   .figure.photo{min-height:260px}
@@ -354,7 +362,7 @@ html,body{overflow-x:clip}
 
 /* split headings */
 .js-fx .sp .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
-.js-fx .sp .w>span,.js-fx .sp .ch{display:inline-block;transform:translateY(108%);transition:transform 1s var(--ease) var(--dl,0s)}
+.js-fx .sp .w>span,.js-fx .sp .ch{display:inline-block;transform:translateY(108%);transition:transform .7s var(--ease) var(--dl,0s)}
 .js-fx .sp.in .w>span,.js-fx .sp.in .ch{transform:none}
 .sp.done .ch{--dl:0s}
 .contact .ch{transition:transform .5s var(--ease) var(--dl,0s),color .3s}
@@ -364,7 +372,7 @@ html,body{overflow-x:clip}
 /* generic reveal (uses translate so it composes with transforms) */
 .js-fx .rv{opacity:0;translate:0 32px;
   transition-property:opacity,translate,transform,box-shadow,background,color;
-  transition-duration:1s,1s,.4s,.35s,.3s,.3s;transition-timing-function:var(--ease);
+  transition-duration:.6s,.6s,.4s,.35s,.3s,.3s;transition-timing-function:var(--ease);
   transition-delay:var(--dl,0s),var(--dl,0s),0s,0s,0s,0s}
 .js-fx .rv.in{opacity:1;translate:0 0}
 .js-fx .step.rv{translate:-40px 0}
@@ -461,7 +469,7 @@ html,body{overflow-x:clip}
   .marquee{transform:rotate(-3deg)}
 }
 @media (prefers-reduced-motion:reduce){
-  .grain,.ghost span,.hero h1 .ln>span,.fx,.proof span,.portrait img,.scan,.hud::before{animation:none!important}
+  .ghost span,.hero h1 .ln>span,.fx,.proof span,.portrait img,.scan,.hud::before{animation:none!important}
   .scan{display:none}
   .mq-track{animation:none}
   .panel .inner>div:first-child>*,.figure.grid4 img,.figure b{opacity:1;translate:0 0;transform:none}
@@ -473,7 +481,6 @@ html,body{overflow-x:clip}
 <body>
 <a class="skip" href="#top">Skip to content</a>
 <div class="progress" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
 <header class="nav">
   <div class="wrap">
     <a class="mark" href="#top" aria-label="RS, Rayan Shahzad, back to top"><span>RS</span><b>Rayan Shahzad</b></a>
@@ -499,7 +506,7 @@ html,body{overflow-x:clip}
       </div>
       <div class="proof"><span style="--d:.85s">MSc KAUST 2026 · 3.92 GPA</span><span style="--d:.95s">Ex BAT · Ingredion · Nestlé</span><span style="--d:1.05s">IBPC Winner 2026</span></div>
     </div>
-    <div class="portrait half"><img src="assets/rayan-full.webp" width="900" height="1649" alt="Rayan Shahzad in a navy checked blazer and light blue shirt"><span class="scan" aria-hidden="true"></span></div>
+    <div class="portrait half"><img src="assets/rayan-full-640.webp" srcset="assets/rayan-full-640.webp 640w, assets/rayan-full.webp 900w" sizes="(max-width:600px) 190px, 320px" fetchpriority="high" width="900" height="1649" alt="Rayan Shahzad in a navy checked blazer and light blue shirt"><span class="scan" aria-hidden="true"></span></div>
   </div>
 </div>
 
@@ -595,10 +602,10 @@ html,body{overflow-x:clip}
 <section id="work"><div class="wrap">
   <p class="eyebrow">Work</p>
   <h2>Things I've <em>built.</em></h2>
-  <p class="lede">Factory automation, a precision dispenser, consumer hardware, a hydro turbine and a water generator. Pick a panel to open it.</p>
+  <p class="lede">Factory automation, a precision dispenser, consumer hardware, a hydro turbine and a water generator. Pick a project to open it.</p>
   <div class="panels" id="panels">
-    <article class="panel open" tabindex="0">
-      <div class="spine">Touchless pilot</div>
+    <article class="panel open">
+      <button class="spine" type="button" aria-expanded="false">Touchless pilot</button>
       <div class="inner">
         <div>
           <p class="eyebrow">Industrial automation · BAT Pakistan</p>
@@ -615,8 +622,8 @@ html,body{overflow-x:clip}
         <div class="figure photo tl"><img src="assets/touchless.webp" alt="Rayan beside the start button at the launch of the touchless production pilot, with control dashboards overlaid" loading="lazy"><span>Pilot launch</span></div>
       </div>
     </article>
-    <article class="panel" tabindex="0">
-      <div class="spine">Elexint</div>
+    <article class="panel">
+      <button class="spine" type="button" aria-expanded="false">Elexint</button>
       <div class="inner">
         <div>
           <p class="eyebrow">Mechatronics · Elexint · Cofounder and CTO</p>
@@ -633,8 +640,8 @@ html,body{overflow-x:clip}
         <div class="figure photo wide"><img src="assets/elexint-render.webp" alt="The Elexint dispenser in a black housing with an angled touchscreen and a row of scent vials, on a wooden sideboard" loading="lazy"><span>Elexint dispenser</span></div>
       </div>
     </article>
-    <article class="panel" tabindex="0">
-      <div class="spine">Innox prototypes</div>
+    <article class="panel">
+      <button class="spine" type="button" aria-expanded="false">Innox prototypes</button>
       <div class="inner">
         <div>
           <p class="eyebrow">Consumer hardware · Innox Academy, Shenzhen</p>
@@ -655,8 +662,8 @@ html,body{overflow-x:clip}
         </div>
       </div>
     </article>
-    <article class="panel" tabindex="0">
-      <div class="spine">Hydro turbine</div>
+    <article class="panel">
+      <button class="spine" type="button" aria-expanded="false">Hydro turbine</button>
       <div class="inner">
         <div>
           <p class="eyebrow">Fluid machinery · ERU lab group project</p>
@@ -672,8 +679,8 @@ html,body{overflow-x:clip}
         <div class="figure photo"><img src="assets/turbine.webp" alt="The finished turbine on a lab hydraulic bench: a PVC ring manifold feeding eight tubes into a central pipe" loading="lazy"><span>On the lab hydraulic bench</span></div>
       </div>
     </article>
-    <article class="panel" tabindex="0">
-      <div class="spine">Water generator</div>
+    <article class="panel">
+      <button class="spine" type="button" aria-expanded="false">Water generator</button>
       <div class="inner">
         <div>
           <p class="eyebrow">Thermal systems · BSc final year project, UET</p>
@@ -690,8 +697,8 @@ html,body{overflow-x:clip}
         <div class="figure photo"><img src="assets/awg.webp" alt="The water generator in its clear acrylic case on a lab bench, with the evaporator coil and fan on top and the compressor below" loading="lazy" style="object-position:58% 55%"><span>Final build in its acrylic case</span></div>
       </div>
     </article>
-    <article class="panel" tabindex="0">
-      <div class="spine">Side builds</div>
+    <article class="panel">
+      <button class="spine" type="button" aria-expanded="false">Side builds</button>
       <div class="inner">
         <div>
           <p class="eyebrow">Embedded and automation · Side builds</p>
@@ -863,8 +870,13 @@ $("#badge").addEventListener("click",e=>e.currentTarget.classList.toggle("flippe
 
 // ---- Work panels ----
 const panels = [...document.querySelectorAll(".panel")];
-const open = p => panels.forEach(x=>x.classList.toggle("open",x===p));
-panels.forEach(p=>["mouseenter","focus","click"].forEach(e=>p.addEventListener(e,()=>open(p))));
+const open = p => panels.forEach(x=>{ x.classList.toggle("open",x===p); x.querySelector(".spine").setAttribute("aria-expanded",x===p); });
+open(panels.find(p=>p.classList.contains("open")));
+const phone = matchMedia("(max-width:900px)");
+panels.forEach(p=>p.querySelector(".spine").addEventListener("click",()=>{
+  open(p);
+  if (phone.matches) requestAnimationFrame(()=>p.scrollIntoView({block:"start",behavior:"smooth"}));
+}));
 
 // ---- Timeline year and nav highlight ----
 const mid = {rootMargin:"-45% 0px -45% 0px"};
@@ -950,7 +962,7 @@ $("#copy").addEventListener("click",async e=>{
 
   // ---- reveal on scroll ----
   const groups = [".nums .num", ".steps .step", ".rows li", ".facts > div", ".quotes .q"];
-  groups.forEach((g) => $$(g).forEach((el, i) => { el.classList.add("rv"); el.style.setProperty("--dl", (i % 8) * 80 + "ms"); }));
+  groups.forEach((g) => $$(g).forEach((el, i) => { el.classList.add("rv"); el.style.setProperty("--dl", (i % 8) * 50 + "ms"); }));
   $$(".lede, .links, .quote, .mail, .fams, #badge, .about > div:first-child > p").forEach((el) => el.classList.add("rv"));
   const table = $("#table");
   if (table) $$(".tile", table).forEach((t, i) => t.style.setProperty("--dl", i * 24 + "ms"));
@@ -961,7 +973,7 @@ $("#copy").addEventListener("click",async e=>{
     t.classList.add("in"); io.unobserve(t);
     setTimeout(() => t.classList.add("done"), 1800);
     if (t.classList.contains("nums")) countUp();
-  }), { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+  }), { rootMargin: "0px 0px -2% 0px", threshold: 0.05 });
   $$(".sp, .rv, #table, .nums").forEach((el) => io.observe(el));
 
   // ---- count up ----
@@ -1149,6 +1161,7 @@ $("#copy").addEventListener("click",async e=>{
     }
 
     // marquee speed and skew follow the scroll
+    anims.forEach((a) => (vis.get(mqWrap) ? a.playState !== "running" && a.play() : a.playState === "running" && a.pause()));
     if (vis.get(mqWrap)) {
       const rate = (1 + Math.min(Math.abs(vel) * 0.18, 7)) * dir;
       anims.forEach((a) => (a.playbackRate = rate));
