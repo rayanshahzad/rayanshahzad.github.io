@@ -78,6 +78,7 @@ h2{font-size:clamp(2.4rem,6vw,4.6rem)}
 .hero-grid{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:24px}
 .hero h1{font-size:clamp(2.8rem,6.6vw,5.6rem)}
 .hero h1 i{font-style:normal;color:var(--f3)}
+.hero h1 .eyebrow{display:block;line-height:1.55}
 .hero-sub{margin:18px 0 0;color:var(--ink-soft);max-width:36ch}
 .portrait{position:relative;justify-self:center}
 .portrait img{height:clamp(400px,46vw,650px);width:auto;position:relative}
@@ -238,6 +239,18 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   .year{display:none}
   .steps{border-right:0;padding-right:0}
   .step .when{float:none;display:block;margin-top:6px}
+}
+@media (max-width:600px){
+  .hero-grid{gap:0}
+  .hero-grid>div:first-child{display:contents}
+  .portrait{order:-1;margin-bottom:12px}
+  .portrait.half img{width:190px;height:216px;object-fit:cover;object-position:50% 0}
+  .hero h1{font-size:2.55rem}
+  .hero h1 .eyebrow{margin-bottom:10px}
+  .hero-sub{margin:12px auto 0;max-width:none}
+  .hero-cta{margin-top:18px}
+  .proof{order:2;margin-top:18px}
+  .ghost{padding-top:40px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -440,8 +453,7 @@ html,body{overflow-x:clip}
   <div class="ghost" aria-hidden="true"><span style="--i:0">R</span><span style="--i:1">A</span><span style="--i:2">Y</span><span style="--i:3">A</span><span style="--i:4">N</span></div>
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow fx" style="--d:.1s">Rayan Shahzad · Mechanical engineer</p>
-      <h1><span class="ln"><span style="--i:0">Process &amp;</span></span><span class="ln"><span style="--i:1">Hardware</span></span><span class="ln"><span style="--i:2">Engineer<i>.</i></span></span></h1>
+      <h1><span class="eyebrow fx" style="--d:.1s">Rayan Shahzad · Mechanical engineer</span> <span class="ln"><span style="--i:0">Process &amp;</span></span> <span class="ln"><span style="--i:1">Hardware</span></span> <span class="ln"><span style="--i:2">Engineer<i>.</i></span></span></h1>
       <p class="hero-sub fx" style="--d:.65s">I build the whole system, then I measure it. Process entrepreneur, automation geek and MSc candidate at KAUST.</p>
       <div class="proof"><span style="--d:.85s">MSc KAUST · 3.92 GPA</span><span style="--d:.95s">Ex BAT · Ingredion · Nestlé</span><span style="--d:1.05s">Graduating Dec 2026</span></div>
     </div>
