@@ -38,7 +38,7 @@
 :root{
   --paper:#f7f2dd; --paper-warm:#f3e9a6; --card:#fffdf2;
   --ink:#1b1d3a; --ink-soft:#5a5b70; --line:rgba(27,29,58,.14); --ghost:rgba(27,29,58,.055);
-  --f1:#1b1d3a; --f2:#45466a; --f3:#85829a; --f4:#cbc4b3; --f5:#e9e1c2;
+  --f1:#1b1d3a; --f2:#45466a; --f3:#6f6c88; --f4:#cbc4b3; --f5:#e9e1c2;
   --sans:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
   --mono:"DM Mono",ui-monospace,Menlo,monospace;
   --cabin:"Cabin","Schibsted Grotesk",Arial,sans-serif;
@@ -133,15 +133,17 @@ h2{font-size:clamp(2.4rem,6vw,4.6rem)}
 .fam i{width:11px;height:11px;border-radius:3px;background:var(--c)}
 .fam[aria-pressed="true"]{background:var(--ink);color:var(--card)}
 .skills{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:32px;align-items:start}
-.table{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px}
+.table{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px}
 .tile{aspect-ratio:1;border-radius:14px;border:0;background:var(--c);color:var(--t);padding:9px 10px;text-align:left;font-family:var(--sans);
   display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:transform .25s,opacity .3s,box-shadow .25s}
 .tile:hover,.tile:focus-visible{transform:translateY(-5px) scale(1.04);box-shadow:0 14px 24px -14px rgba(27,29,58,.6)}
 .tile.dim{opacity:.22}
-.tile small{font:400 .58rem var(--mono);opacity:.75}
+.tile small{font:400 .75rem var(--mono)}
 .tile b{font-size:1.45rem;letter-spacing:-.03em;line-height:1}
-.tile span{font-size:.6rem;line-height:1.15;opacity:.85}
+.tile span{font-size:.75rem;line-height:1.15}
 .detail{position:sticky;top:96px;padding:24px;border-radius:18px;background:var(--card);border:1px solid var(--line);min-height:210px}
+@media (hover:none){.hov{display:none}}
+@media (hover:hover){.tap{display:none}}
 .detail b{display:block;font-size:3.4rem;letter-spacing:-.04em;line-height:1}
 .detail strong{display:block;margin-top:12px}
 .detail small{font-size:.8rem;font-family:var(--cabin);font-weight:600;letter-spacing:.01em;text-transform:none;color:var(--ink-soft)}
@@ -225,7 +227,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   .hero-cta{justify-content:center}
   .ghost{align-items:start;padding-top:70px;font-size:30vw}
   .about,.honors,.skills{grid-template-columns:1fr}
-  .detail{position:static;min-height:0}
+  .detail{position:fixed;left:16px;right:16px;top:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;min-height:0;padding:14px 16px;
+    display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:14px;align-items:center;box-shadow:0 18px 40px -12px rgba(27,29,58,.5);
+    transform:translateY(170%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+  .detail.show{transform:none}
+  .detail b{grid-column:1;grid-row:1 / span 3;font-size:2.3rem}
+  .detail small,.detail strong,.detail p{grid-column:2}
+  .detail strong{margin-top:0}
+  .detail p{margin:2px 0 0}
   .panels{flex-direction:column;min-height:0}
   .panel,.panel.open{flex:none;cursor:default}
   .spine{display:none}
@@ -558,7 +567,7 @@ html,body{overflow-x:clip}
 <section id="skills"><div class="wrap">
   <p class="eyebrow">Skills</p>
   <h2>The periodic table <em>of my toolkit.</em></h2>
-  <p class="lede"><span id="count"></span> elements in five families. Hover a tile to read where I used it, or pick a family to light it up.</p>
+  <p class="lede"><span id="count"></span> elements in five families. <span class="hov">Hover</span><span class="tap">Tap</span> a tile to read where I used it, or pick a family to light it up.</p>
   <div class="fams" id="fams"></div>
   <div class="skills">
     <div class="table" id="table"></div>
@@ -790,8 +799,22 @@ SKILLS.forEach(([sym,name,f],i)=>{
   b.style.setProperty("--c",`var(${FAMILIES[f][1]})`); b.style.setProperty("--t",FAMILIES[f][2]);
   b.innerHTML = `<small>${String(i+1).padStart(2,"0")}</small><b>${sym}</b><span>${name}</span>`;
   ["mouseenter","focus","click"].forEach(e=>b.addEventListener(e,()=>show(i)));
+  b.addEventListener("click",()=>detail.classList.add("show"));
+  b.tabIndex = i ? -1 : 0;
   table.appendChild(b);
 });
+// one tab stop for the grid, arrow keys inside it
+table.setAttribute("role","group"); table.setAttribute("aria-label","Skills. Use the arrow keys to move between tiles.");
+table.addEventListener("keydown",e=>{
+  const tiles=[...table.children], i=tiles.indexOf(document.activeElement); if(i<0) return;
+  const cols=tiles.filter(t=>t.offsetTop===tiles[0].offsetTop).length;
+  const to={ArrowRight:i+1,ArrowLeft:i-1,ArrowDown:i+cols,ArrowUp:i-cols,Home:0,End:tiles.length-1}[e.key];
+  if(to===undefined||to<0||to>=tiles.length) return;
+  e.preventDefault(); tiles.forEach(t=>t.tabIndex=-1); tiles[to].tabIndex=0; tiles[to].focus();
+});
+// on touch screens the detail card slides up from the bottom; tap it or scroll away to hide it
+detail.addEventListener("click",()=>detail.classList.remove("show"));
+new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) detail.classList.remove("show"); })).observe(table);
 FAMILIES.forEach(([name,c],f)=>{
   const b = document.createElement("button");
   b.className = "fam"; b.type = "button"; b.setAttribute("aria-pressed","false");
